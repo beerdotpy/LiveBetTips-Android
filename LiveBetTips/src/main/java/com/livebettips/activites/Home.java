@@ -1,4 +1,4 @@
-package com.livebettips;
+package com.livebettips.activites;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.livebettips.R;
 import com.livebettips.interfaces.UserInterface;
 import retrofit.RestAdapter;
 

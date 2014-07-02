@@ -1,9 +1,11 @@
-package com.livebettips;
+package com.livebettips.activites;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.livebettips.R;
 
 
 public class Register extends Activity {
