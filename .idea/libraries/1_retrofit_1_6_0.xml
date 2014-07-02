@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="1_retrofit-1.6.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/LiveBetTips/libs/retrofit-1.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
