@@ -10,10 +10,15 @@ import android.view.MenuItem;
 
 import com.livebettips.R;
 import com.livebettips.interfaces.UserInterface;
+
+
+
 import retrofit.RestAdapter;
 
 
 public class Home extends Activity {
+
+    String API_URL= "http://178.21.172.107" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +29,7 @@ public class Home extends Activity {
          mCountDown.start();
 
          RestAdapter restAdapter = new RestAdapter.Builder()
-                                  .setEndpoint("http://178.21.172.107/api")
+                                  .setEndpoint(API_URL+"/api")
                                   .build();
 
           UserInterface userInterface = restAdapter.create(UserInterface.class);
