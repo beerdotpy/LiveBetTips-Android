@@ -28,11 +28,11 @@ public class Home extends Activity {
 
          mCountDown.start();
 
-         RestAdapter restAdapter = new RestAdapter.Builder()
+         RestAdapter userAdapter = new RestAdapter.Builder()
                                   .setEndpoint(API_URL+"/api")
                                   .build();
 
-          UserInterface userInterface = restAdapter.create(UserInterface.class);
+          UserInterface userInterface = userAdapter.create(UserInterface.class);
     }
 
     protected CountDownTimer mCountDown = new CountDownTimer(3000, 1000)

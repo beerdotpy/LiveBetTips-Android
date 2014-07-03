@@ -10,67 +10,62 @@
         android:layout_height="wrap_content"
         android:text="Register"
         android:id="@+id/textView"
-        android:layout_marginTop="@dimen/margin_top"
-        andr
+        android:layout_marginTop="@dimen/margin_top_tv"
+        android:layout_centerHorizontal="true"
         android:textColor="#1ffffd"
         android:textSize="40sp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/email"
-        android:layout_marginTop="77dp"
+        android:width="250dp"
+        android:id="@+id/et_email"
+        android:layout_marginTop="@dimen/dist_tv_et"
+        android:layout_centerHorizontal="true"
         android:background="#67ffd8"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
-        android:paddingLeft="4dp"
-        android:text="Email ID" />
+        android:paddingLeft="5dp"
+        android:inputType="textEmailAddress"
+        android:hint="Email ID" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/password"
+        android:id="@+id/et_password"
         android:background="#57fff1"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:paddingLeft="4dp"
-        android:layout_below="@+id/email"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="46dp"
-        android:layout_alignRight="@+id/email"
-        android:layout_alignEnd="@+id/email"
-        android:text="Password"/>
+        android:paddingLeft="5dp"
+        android:layout_below="@+id/et_email"
+        android:layout_marginTop="@dimen/dist_et"
+        android:layout_centerHorizontal="true"
+        android:hint="Password"
+        android:width="250dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/repassword"
+        android:id="@+id/et_repassword"
         android:inputType="textPassword"
         android:background="#57fff1"
-        android:layout_below="@+id/password"
+        android:layout_below="@+id/et_password"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:paddingLeft="4dp"
-        android:layout_marginTop="45dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:text="Password" />
+        android:paddingLeft="5dp"
+        android:layout_marginTop="@dimen/dist_et"
+        android:layout_centerHorizontal="true"
+        android:hint="Re-Password"
+        android:width="250dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:id="@+id/register"
-        android:layout_below="@+id/repassword"
+        android:id="@+id/bt_register"
+        android:layout_below="@+id/et_repassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp" />
-
-
-
+        android:layout_marginTop="@dimen/dist_et" />
 
 </RelativeLayout>
