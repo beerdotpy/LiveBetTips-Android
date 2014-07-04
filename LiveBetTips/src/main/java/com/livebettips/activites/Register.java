@@ -1,8 +1,10 @@
 package com.livebettips.activites;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,9 +13,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.livebettips.R;
+import com.livebettips.classes.User;
+import com.livebettips.interfaces.UserInterface;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 
 public class Register extends Activity {
@@ -23,24 +32,33 @@ public class Register extends Activity {
     String email,password,repassword;
     Context ctx;
     Pattern pattern;
+    User user;
+    String API_URL= "http://178.21.172.107" ;
+    UserInterface userInterface;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        ctx = getApplicationContext();
+        RestAdapter userAdapter = new RestAdapter.Builder()
+                .setEndpoint(API_URL+"/api")
+                .build();
+
+        userInterface = userAdapter.create(UserInterface.class);
+        ctx = this;
 
         bt_register = (Button) findViewById(R.id.bt_register);
         et_email = (EditText) findViewById(R.id.et_email);
         et_password = (EditText) findViewById(R.id.et_password);
         et_repassword = (EditText) findViewById(R.id.et_repassword);
+        user = new User();
 
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
         pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
 
         /* TO DO
-             check for null pointer in edit text values
-             implement dynamic checking for password
+              implement dynamic checking for password
          */
 
         bt_register.setOnClickListener(new View.OnClickListener() {
@@ -51,40 +69,60 @@ public class Register extends Activity {
                 password = et_password.getText().toString();
                 repassword = et_repassword.getText().toString();
 
-                Matcher matcher = pattern.matcher(email);
+                boolean valid = checkDetails(email,password,repassword);
+                if(valid)
+                {
+                    final ProgressDialog progressDialog = new ProgressDialog(ctx);
+                    progressDialog.setTitle("Please Wait");
+                    progressDialog.setIndeterminate(true);
+                    progressDialog.show();
 
-                if (matcher.matches()) {
-                    if (password.contentEquals(repassword)) {
-                        Toast.makeText(ctx, "Password match", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(ctx, "Password did not match", Toast.LENGTH_LONG).show();
-                    }
-                } else {
-                    Toast.makeText(ctx, "Please enter a valid email id", Toast.LENGTH_LONG).show();
+                    Callback callback = new Callback() {
+                        @Override
+                        public void success(Object o, Response response) {
+                            // Read response here
+                            progressDialog.dismiss();
+                            Log.d("Object", o.toString());
+                            Toast.makeText(ctx,"Registered Successfully.\n" +
+                                                "Email has been sent for verification ",Toast.LENGTH_LONG).show();
+                        }
+
+                        @Override
+                        public void failure(RetrofitError retrofitError) {
+                            progressDialog.dismiss();
+                            Log.d("error", retrofitError.toString());
+                            // Catch error here
+                        } };
+                    userInterface.createUser(user, callback);
                 }
             }
         });
 
-        //        User user = new User();
-//        user.email = "sarthak_mehrish@yahoo.co.in";
-//        user.password = "qwerty";
-//
-//        Callback callback = new Callback() {
-//            @Override
-//            public void success(Object o, Response response) {
-//                // Read response here
-//                Log.d("Response", response.toString());
-//            }
-//
-//            @Override
-//            public void failure(RetrofitError retrofitError) {
-//
-//                Log.d("error", retrofitError.toString());
-//                // Catch error here
-//            } };
-//        userInterface.createUser(user,callback);
 
+    }
 
+    public boolean checkDetails(String email,String password,String repassword){
+
+        Matcher matcher = pattern.matcher(email);
+        if (!email.contentEquals("") && !password.contentEquals("")  && !repassword.contentEquals("")   ){   //Check if any field is left empty
+            if (matcher.matches()) {                                                                         //Check if email id is valid or not
+                if (password.contentEquals(repassword)) {                                                    //Check if password matches or not
+                    Toast.makeText(ctx, "Password match", Toast.LENGTH_LONG).show();
+                    user.setEmail(email);
+                    user.setPassword(password);
+                    return true;
+                } else {
+                    Toast.makeText(ctx, "Password did not match", Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            } else {
+                Toast.makeText(ctx, "Please enter a valid EmailID", Toast.LENGTH_LONG).show();
+                return false;
+            }
+        }else{
+            Toast.makeText(ctx,"Please fill all the details",Toast.LENGTH_LONG).show();
+            return false;
+        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
