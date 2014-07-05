@@ -1,4 +1,4 @@
-package com.livebettips.activites;
+package com.livebettips.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -41,7 +41,7 @@ public class Home extends Activity {
             Log.d("Timer","3sec finish");
 
 
-            Intent register=new Intent(Home.this,Register.class);
+            Intent register=new Intent(Home.this,Login.class);
             startActivity(register);
 
         }

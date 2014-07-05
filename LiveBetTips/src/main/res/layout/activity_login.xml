@@ -8,19 +8,20 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/tv_register_register"
-        android:layout_marginTop="@dimen/margin_top_tv"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Login"
+        android:id="@+id/tv_login_login"
         android:layout_centerHorizontal="true"
-        android:textColor="#1ffffd"
-        android:textSize="40sp" />
+        android:layout_marginTop="@dimen/margin_top_tv"
+        android:textSize="40sp"
+        android:textColor="#1ffffd"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="@dimen/width_et"
-        android:id="@+id/et_register_email"
-        android:layout_below="@+id/tv_register_register"
+        android:id="@+id/et_login_email"
+        android:layout_below="@+id/tv_login_login"
         android:layout_marginTop="@dimen/dist_tv_et"
         android:layout_centerHorizontal="true"
         android:background="#67ffd8"
@@ -28,28 +29,29 @@
         android:paddingTop="10dp"
         android:paddingLeft="5dp"
         android:inputType="textEmailAddress"
-        android:hint="Email ID" />
+        android:hint="Email ID"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/tv_register_validEmail"
+        android:id="@+id/tv_login_validEmail"
         android:textColor="#1ffffd"
-        android:layout_below="@+id/et_register_email"
+        android:layout_below="@+id/et_login_email"
         android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"/>
+
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:id="@+id/et_register_password"
+        android:id="@+id/et_login_password"
         android:background="#57fff1"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:paddingLeft="5dp"
-        android:layout_below="@+id/et_register_email"
+        android:layout_below="@+id/et_login_email"
         android:layout_marginTop="@dimen/dist_et_et"
         android:layout_centerHorizontal="true"
         android:hint="Password"
@@ -59,44 +61,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/tv_register_validPassword"
-        android:layout_below="@+id/et_register_password"
-        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_login_validPassword"
         android:textColor="#1ffffd"
-        android:layout_marginTop="5dp"/>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_register_repassword"
-        android:inputType="textPassword"
-        android:background="#57fff1"
-        android:layout_below="@+id/et_register_password"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="5dp"
-        android:layout_marginTop="@dimen/dist_et_et"
-        android:layout_centerHorizontal="true"
-        android:hint="Re-Password"
-        android:width="@dimen/width_et" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/tv_register_validrePassword"
-        android:layout_below="@+id/et_register_repassword"
-        android:layout_centerHorizontal="true"
-        android:textColor="#1ffffd"
-        android:layout_marginTop="5dp" />
+        android:layout_below="@+id/et_login_password"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
-        android:id="@+id/bt_register_register"
-        android:layout_below="@+id/et_register_repassword"
+        android:text="Login"
+        android:id="@+id/bt_login_login"
+        android:layout_below="@+id/et_login_password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dist_et_et" />
+
 
 </RelativeLayout>
