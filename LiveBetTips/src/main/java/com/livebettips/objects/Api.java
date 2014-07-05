@@ -29,10 +29,12 @@ public class Api {
                 .setRequestInterceptor(new RequestInterceptor() {
                     @Override
                     public void intercept(RequestFacade request) {
-                       request.addHeader("Content-Type","application/json");
+                        request.addHeader("Content-Type", "application/json");
                     }
                 })
+                .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
+
         return  restAdapter;
     }
 

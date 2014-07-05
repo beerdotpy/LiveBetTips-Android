@@ -3,6 +3,7 @@ package com.livebettips.activities;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -64,10 +65,12 @@ public class Register extends Activity {
                     email = et_email.getText().toString();
                     Matcher matcher = pattern.matcher(email);
                     if(!matcher.matches()){
+                        tv_validEmail.setTextColor(Color.RED);
                         tv_validEmail.setText("Please Enter a valid Email ID");
                         valid=false;
                     }else{
-                        tv_validEmail.setText("Email ID is correct");
+                        tv_validEmail.setTextColor(Color.WHITE);
+                        tv_validEmail.setText("Email ID is valid");
                         valid=true;
                     }
                 }
@@ -80,14 +83,21 @@ public class Register extends Activity {
                 if(!hasFocus) {
                     password = et_password.getText().toString();
                     if (password != "") {
-                        if (password.length() > 5) {
-                            tv_validPassword.setText("Password is correct");
+                        if (password.length() >= 5 && password.length() < 8) {
+                            tv_validPassword.setTextColor(Color.BLUE);
+                            tv_validPassword.setText("Strength : FAIR ");
                             valid=true;
-                        } else {
+                        }else if(password.length() >= 8 ) {
+                            tv_validPassword.setTextColor(Color.YELLOW);
+                            tv_validPassword.setText("Strength : STRONG");
+                            valid = true;
+                        }else{
+                            tv_validPassword.setTextColor(Color.RED);
                             tv_validPassword.setText("Password must be greater than 5 characters");
                             valid=false;
                         }
                     }else{
+                            tv_validPassword.setTextColor(Color.RED);
                             tv_validPassword.setText("This field is required");
                             valid=false;
                     }
@@ -103,13 +113,13 @@ public class Register extends Activity {
              @Override
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                    if(password.contentEquals(s)){
+                       tv_validrePassword.setTextColor(Color.WHITE);
                        tv_validrePassword.setText("Password Match");
                        if(valid){
-                           user.setEmail(email);
-                           user.setPassword(password);
                            bt_register.setEnabled(true);
                        }
                    }else{
+                       tv_validrePassword.setTextColor(Color.RED);
                        tv_validrePassword.setText("Password does not match");
                        bt_register.setEnabled(false);
                    }
@@ -125,6 +135,8 @@ public class Register extends Activity {
             @Override
             public void onClick(View v) {
 
+                    user.setEmail(et_email.getText().toString());
+                    user.setPassword(et_password.getText().toString());
                     final ProgressDialog progressDialog = new ProgressDialog(ctx);
                     progressDialog.setTitle("Please Wait");
                     progressDialog.setMessage("Registering...");
@@ -137,13 +149,20 @@ public class Register extends Activity {
                             // Read response here
                             progressDialog.dismiss();
                             Log.d("Object", o.toString());
+                            tv_validEmail.setTextColor(Color.WHITE);
+                            tv_validEmail.setText("Email ID successfully registered");
                             Toast.makeText(ctx,"Registered Successfully.\n" +
-                                                "Email has been sent for verification ",Toast.LENGTH_LONG).show();
+                                               "Email has been sent for verification ",Toast.LENGTH_LONG).show();
                         }
 
                         @Override
                         public void failure(RetrofitError retrofitError) {
                             progressDialog.dismiss();
+                            if(retrofitError.getResponse().getStatus() == 409){
+                                tv_validEmail.setTextColor(Color.RED);
+                                tv_validEmail.setText("Email ID already exists");
+                            }
+
                             Log.d("error", retrofitError.toString());
                             // Catch error here
                         } };

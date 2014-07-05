@@ -14,4 +14,6 @@ public interface UserInterface {
     @POST("/user/")
      void createUser(@Body User user, Callback<User> cb);
 
+    @POST("/user/login/")
+     void userlogin(@Body User user,Callback<User> userCallback);
 }
