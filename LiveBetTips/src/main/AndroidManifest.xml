@@ -26,6 +26,10 @@
             android:name="com.livebettips.activities.Login"
             android:label="@string/title_activity_login" >
         </activity>
+        <activity
+            android:name=".activities.ShowPushedPredictions"
+            android:label="@string/title_activity_predictions" >
+        </activity>
     </application>
 
 </manifest>

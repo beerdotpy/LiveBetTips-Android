@@ -2,6 +2,8 @@ package com.livebettips.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
@@ -13,9 +15,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.livebettips.R;
 import com.livebettips.objects.Api;
+import com.livebettips.objects.Profile;
 import com.livebettips.objects.User;
 
 import java.util.regex.Matcher;
@@ -34,6 +38,8 @@ public class Login extends ActionBarActivity {
     Boolean valid = false;
     User user;
     Context ctx;
+    SharedPreferences preferences;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,9 @@ public class Login extends ActionBarActivity {
         setContentView(R.layout.activity_login);
 
         ctx = this;
+
+        preferences = ctx.getSharedPreferences("bettips", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = preferences.edit();
 
         et_email = (EditText) findViewById(R.id.et_login_email);
         et_password = (EditText) findViewById(R.id.et_login_password);
@@ -108,18 +117,29 @@ public class Login extends ActionBarActivity {
                 progressDialog.setIndeterminate(true);
                 progressDialog.show();
 
-                Api.userInterface.userlogin(user, new Callback<User>() {
+                Api.userInterface.userlogin(user, new Callback<Profile>() {
                     @Override
-                    public void success(User user1, Response response) {
+                    public void success(Profile profile, Response response) {
+
+                        Log.d("ID Username authToken", profile.getId().toString() + profile.getUsername() +
+                                profile.getAuthToken());
+                        editor.putInt("userID", profile.getId());
+                        editor.putString("authToken", profile.getAuthToken());
+                        editor.commit();
                         progressDialog.dismiss();
-                        Log.d("Object",user1.getId().toString());
+
+                        Toast.makeText(ctx,"Login Successfully",Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(ctx,ShowPushedPredictions.class);
+                        startActivity(intent);
+
 
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
 
-                        progressDialog.dismiss();
+
                         try {
                             if (error.getResponse().getStatus() == 404) {
                                 tv_validEmail.setText("Email ID does not exist");
@@ -135,6 +155,7 @@ public class Login extends ActionBarActivity {
                             tv_validPassword.setText("Password is incorrect");
                         }
 
+                        progressDialog.dismiss();
                     }
                 });
 

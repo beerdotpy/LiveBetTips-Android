@@ -34,8 +34,8 @@ public class Register extends Activity {
     EditText et_email,et_password,et_repassword;
     TextView tv_validEmail,tv_validPassword,tv_validrePassword;
     String email,password,repassword;
-    Context ctx;
     User user;
+    Context ctx;
     Boolean valid=false;
 
     @Override
@@ -114,7 +114,7 @@ public class Register extends Activity {
              public void onTextChanged(CharSequence s, int start, int before, int count) {
                    if(password.contentEquals(s)){
                        tv_validrePassword.setTextColor(Color.WHITE);
-                       tv_validrePassword.setText("Password Match");
+                       tv_validrePassword.setText(getString(R.string.password_match));
                        if(valid){
                            bt_register.setEnabled(true);
                        }
