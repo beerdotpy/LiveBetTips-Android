@@ -117,11 +117,11 @@ public class Login extends ActionBarActivity {
                 progressDialog.setIndeterminate(true);
                 progressDialog.show();
 
-                Api.userInterface.userlogin(user, new Callback<Profile>() {
+                Api.userInterface.userLogin(user, new Callback<Profile>() {
                     @Override
                     public void success(Profile profile, Response response) {
 
-                        Log.d("ID Username authToken", profile.getId().toString() + profile.getUsername() +
+                        Log.d("ID Username authToken", profile.getId().toString() +" "+ profile.getUsername() +" "+
                                 profile.getAuthToken());
                         editor.putInt("userID", profile.getId());
                         editor.putString("authToken", profile.getAuthToken());
@@ -130,7 +130,7 @@ public class Login extends ActionBarActivity {
 
                         Toast.makeText(ctx,"Login Successfully",Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(ctx,ShowPushedPredictions.class);
+                        Intent intent = new Intent(ctx,PushedPredictions.class);
                         startActivity(intent);
 
 
@@ -150,7 +150,6 @@ public class Login extends ActionBarActivity {
                             }
                         }catch (NullPointerException e){
                             e.printStackTrace();
-                            Log.d("Failure","response");
                             tv_validEmail.setText("");
                             tv_validPassword.setText("Password is incorrect");
                         }

@@ -13,7 +13,7 @@ public interface UserInterface {
      void createUser(@Body User user, Callback<User> cb);
 
     @POST("/user/login/")
-     void userlogin(@Body User user,Callback<Profile> userCallback);
+     void userLogin(@Body User user,Callback<Profile> userCallback);
 
 
 }

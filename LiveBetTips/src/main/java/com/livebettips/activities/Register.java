@@ -148,7 +148,6 @@ public class Register extends Activity {
                         public void success(Object o, Response response) {
                             // Read response here
                             progressDialog.dismiss();
-                            Log.d("Object", o.toString());
                             tv_validEmail.setTextColor(Color.WHITE);
                             tv_validEmail.setText("Email ID successfully registered");
                             Toast.makeText(ctx,"Registered Successfully.\n" +

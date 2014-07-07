@@ -1,39 +1,54 @@
 package com.livebettips.activities;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.livebettips.R;
+import com.livebettips.adapters.PredictionAdapter;
 import com.livebettips.objects.Api;
 import com.livebettips.objects.Prediction;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class ShowPushedPredictions extends ActionBarActivity {
+public class PushedPredictions extends ActionBarActivity {
 
-    List<Prediction> predictionList = new ArrayList<Prediction>();
+    ListView lv_prediction;
+    PredictionAdapter predictionAdapter;
+    Context ctx;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_predictions);
+        setContentView(R.layout.activity_pushedpredictions);
 
-        Api.predictionInterface.getpredictions(new Callback<Prediction>() {
+        ctx = this;
+
+        lv_prediction = (ListView) findViewById(R.id.lv_pushedprediction_prediction);
+
+        Api.predictionInterface.getPushedPredictions(new Callback<List<Prediction>>() {
+
             @Override
-            public void success(Prediction prediction, Response response) {
-               predictionList = prediction;
+            public void success(List<Prediction> predictions, Response response) {
+
+                predictionAdapter = new PredictionAdapter(ctx,predictions);
+                lv_prediction.setAdapter(predictionAdapter);
+
             }
 
             @Override
             public void failure(RetrofitError error) {
 
+                Toast.makeText(ctx,"Please try again",Toast.LENGTH_SHORT).show();
             }
         });
 

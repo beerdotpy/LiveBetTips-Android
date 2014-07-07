@@ -41,7 +41,7 @@ public class Api {
                         SharedPreferences prefs = applicationContext.getSharedPreferences("bettips",Context.MODE_PRIVATE);
                         String authToken = prefs.getString("authToken","NA");
                         if(!authToken.contentEquals("NA")){
-                            request.addHeader("Authorization","Basi "+authToken);
+                            request.addHeader("Authorization","Basic "+authToken);
                         }
                     }
                 })
