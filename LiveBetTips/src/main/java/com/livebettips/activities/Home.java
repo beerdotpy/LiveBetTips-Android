@@ -58,7 +58,7 @@ public class Home extends Activity {
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
-
+//checking git config
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
