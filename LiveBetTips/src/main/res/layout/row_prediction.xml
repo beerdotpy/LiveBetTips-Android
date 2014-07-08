@@ -3,15 +3,136 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text=""
-        android:textColor="#1ffffd"
-        android:id="@+id/tv_row_prediction_team"
-        android:layout_marginTop="@dimen/margin_top_tv"
-        android:layout_marginLeft="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="43dp"
+        android:background="#706D2A">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_row_prediction_flag"
+            android:src="@drawable/ic_launcher"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="League"
+            android:textSize="18sp"
+            android:textColor="#1ffffd"
+            android:id="@+id/tv_row_prediction_league"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="Date"
+            android:textColor="#1ffffd"
+            android:id="@+id/tv_row_prediction_date"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <RelativeLayout
+            android:layout_width="198dp"
+            android:layout_height="65dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/relativeLayout2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Home Team"
+                android:textColor="#1ffffd"
+                android:background="#0B0B0B"
+                android:id="@+id/tv_row_prediction_homeTeam"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Away Team"
+                android:textColor="#1ffffd"
+                android:background="#6C7073"
+                android:id="@+id/tv_row_prediction_awayTeam"
+                android:layout_below="@+id/tv_row_prediction_homeTeam"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentEnd="true"
+                android:paddingLeft="10sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="148dp"
+            android:layout_height="69dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/relativeLayout2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Status"
+                android:textColor="#1ffffd"
+                android:background="#6C7073"
+                android:id="@+id/tv_row_prediction_status"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:paddingTop="16sp"
+                android:layout_toLeftOf="@+id/tv_row_prediction_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text=">"
+                android:background="#0B0B0B"
+                android:id="@+id/tv_row_prediction_icon"
+                android:textColor="#1ffffd"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:paddingTop="5sp" />
+
+            <RelativeLayout
+                android:layout_width="92dp"
+                android:layout_height="56dp"
+                android:id="@+id/relativeLayout"
+                android:background="#1ffffd"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/tv_row_prediction_status">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="TIP"
+                    android:id="@+id/tv_row_prediction_tip"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
 </LinearLayout>

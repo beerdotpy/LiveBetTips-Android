@@ -27,8 +27,12 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name=".activities.PushedPredictions"
+            android:name="com.livebettips.activities.PushedPredictions"
             android:label="@string/title_activity_predictions" >
+        </activity>
+        <activity
+            android:name="com.livebettips.activities.PurchasedPredictions"
+            android:label="@string/title_activity_purchased_predictions" >
         </activity>
     </application>
 

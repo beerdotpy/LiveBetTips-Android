@@ -5,10 +5,53 @@
     tools:context="com.livebettips.activities.PushedPredictions"
     android:background="@drawable/background">
 
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#706D2A"
+        android:id="@+id/header1"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Credits"
+            android:textColor="#1ffffd"
+            android:id="@+id/tv_header_credits"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lv_pushedprediction_prediction"
         android:layout_centerHorizontal="true"
-        android:cacheColorHint="@android:color/transparent" />
+        android:cacheColorHint="@android:color/transparent"
+        android:layout_above="@+id/header2"
+        android:layout_below="@+id/header1" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:id="@+id/header2"
+        android:background="#706D2A"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Filters"
+            android:textColor="#1ffffd"
+            android:id="@+id/tv_header_filter"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="8dp"/>
+    </LinearLayout>
 </RelativeLayout>

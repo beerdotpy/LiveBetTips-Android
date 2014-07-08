@@ -8,5 +8,6 @@
     <string name="title_activity_login">Login</string>
     <string name="password_match">Password Match</string>
     <string name="title_activity_predictions">Predictions</string>
+    <string name="title_activity_purchased_predictions">My Tips</string>
 
 </resources>
