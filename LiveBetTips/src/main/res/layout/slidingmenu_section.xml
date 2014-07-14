@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_slidingmenu_section_title"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Section"
+        android:textSize="18sp"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:textColor="#FFFFFF"/>
+
+
+
+</LinearLayout>

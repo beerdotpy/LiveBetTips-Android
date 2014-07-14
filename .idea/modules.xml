@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/LiveBetTips.iml" filepath="$PROJECT_DIR$/LiveBetTips.iml" />
       <module fileurl="file://$PROJECT_DIR$/LiveBetTips/LiveBetTips-LiveBetTips.iml" filepath="$PROJECT_DIR$/LiveBetTips/LiveBetTips-LiveBetTips.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libraries/SlidingMenu/SlidingMenu.iml" filepath="$PROJECT_DIR$/libraries/SlidingMenu/SlidingMenu.iml" />
     </modules>
   </component>
 </project>

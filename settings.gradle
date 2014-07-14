@@ -1,1 +1,2 @@
-include ':LiveBetTips'
+include ":libraries:SlidingMenu",':LiveBetTips'
+

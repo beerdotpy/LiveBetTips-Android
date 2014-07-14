@@ -24,6 +24,13 @@
             android:layout_marginLeft="8dp"/>
     </LinearLayout>
 
+    <View
+        android:id="@+id/black_line1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/header1"/>
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,7 +38,15 @@
         android:layout_centerHorizontal="true"
         android:cacheColorHint="@android:color/transparent"
         android:layout_above="@+id/header2"
-        android:layout_below="@+id/header1" />
+        android:layout_below="@+id/black_line1" />
+
+    <View
+        android:id="@+id/black_line2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@android:color/black"
+        android:layout_above="@+id/header2"
+        android:layout_below="@+id/lv_pushedprediction_prediction"/>
 
     <LinearLayout
         android:orientation="vertical"

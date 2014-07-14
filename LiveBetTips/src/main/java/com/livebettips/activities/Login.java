@@ -1,5 +1,6 @@
 package com.livebettips.activities;
 
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.livebettips.R;
 import com.livebettips.objects.Api;
 import com.livebettips.objects.Profile;
@@ -29,6 +31,7 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
+
 public class Login extends ActionBarActivity {
 
     TextView tv_validEmail,tv_validPassword;
@@ -40,13 +43,24 @@ public class Login extends ActionBarActivity {
     Context ctx;
     SharedPreferences preferences;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         ctx = this;
+
+        SlidingMenu slidingMenu = new SlidingMenu(ctx);
+        slidingMenu.setMode(SlidingMenu.LEFT);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.setShadowWidthRes(R.dimen.slidingmenu_shadow_width);
+        //slidingMenu.setShadowDrawable(R.drawable.slidingmenu_shadow);
+        slidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        slidingMenu.setFadeDegree(0.35f);
+        slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        slidingMenu.setMenu(R.layout.slidingmenu);
+
+      //  getActionBar().setDisplayHomeAsUpEnabled(true);
 
         preferences = ctx.getSharedPreferences("bettips", MODE_PRIVATE);
         final SharedPreferences.Editor editor = preferences.edit();
