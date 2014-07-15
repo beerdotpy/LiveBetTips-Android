@@ -44,7 +44,7 @@ public class Home extends Activity {
             Log.d("Timer","3sec finish");
 
 
-            Intent register=new Intent(Home.this,Login.class);
+            Intent register=new Intent(Home.this,PushedPredictions.class);
             startActivity(register);
 
         }
