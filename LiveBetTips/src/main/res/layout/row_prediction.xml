@@ -96,7 +96,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:paddingTop="16sp"
-                android:layout_toLeftOf="@+id/tv_row_prediction_icon" />
+                android:paddingLeft="4sp"
+                android:layout_toLeftOf="@+id/tv_row_prediction_icon"
+                android:layout_toRightOf="@+id/relativeLayout" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,14 +115,13 @@
                 android:paddingTop="5sp" />
 
             <RelativeLayout
-                android:layout_width="92dp"
+                android:layout_width="60dp"
                 android:layout_height="56dp"
                 android:id="@+id/relativeLayout"
                 android:background="#1ffffd"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_toLeftOf="@+id/tv_row_prediction_status">
+                android:layout_alignParentStart="true">
 
                 <TextView
                     android:layout_width="wrap_content"

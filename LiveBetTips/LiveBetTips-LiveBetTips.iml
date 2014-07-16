@@ -75,6 +75,7 @@
     <orderEntry type="library" exported="" name="retrofit-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="1_retrofit-1.6.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-19.1.0" level="project" />
+    <orderEntry type="library" exported="" name="play-services-5.0.77" level="project" />
     <orderEntry type="library" exported="" name="gridlayout-v7-19.1.0" level="project" />
     <orderEntry type="module" module-name="SlidingMenu" exported="" />
   </component>

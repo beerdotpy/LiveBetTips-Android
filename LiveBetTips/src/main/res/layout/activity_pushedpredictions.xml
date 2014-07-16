@@ -45,8 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:background="@android:color/black"
-        android:layout_above="@+id/header2"
-        android:layout_below="@+id/lv_pushedprediction_prediction"/>
+        android:layout_above="@+id/header2"/>
 
     <LinearLayout
         android:orientation="vertical"

@@ -3,6 +3,8 @@ package com.livebettips.objects;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+import com.livebettips.R;
 import com.livebettips.interfaces.PredictionInterface;
 import com.livebettips.interfaces.UserInterface;
 
@@ -27,6 +29,23 @@ public class Api {
         restAdapter = createRestAdapter(API_URL);
         userInterface = restAdapter.create(UserInterface.class);
         predictionInterface = restAdapter.create(PredictionInterface.class);
+    }
+
+    public static SlidingMenu initSlidingMenu(Context ctx){
+
+        SlidingMenu slidingMenu = new SlidingMenu(ctx);
+        slidingMenu.setMode(SlidingMenu.LEFT);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.setShadowWidthRes(R.dimen.slidingmenu_shadow_width);
+        slidingMenu.setShadowDrawable(R.drawable.slidingmenu_shadow);
+        slidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        slidingMenu.setFadeDegree(0.35f);
+        slidingMenu.setMenu(R.layout.slidingmenu);
+
+        //  getActionBar().setDisplayHomeAsUpEnabled(true);
+
+        return slidingMenu;
+
     }
 
     private static RestAdapter createRestAdapter(String URL){

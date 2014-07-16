@@ -9,5 +9,6 @@
     <string name="password_match">Password Match</string>
     <string name="title_activity_predictions">Predictions</string>
     <string name="title_activity_purchased_predictions">My Tips</string>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>

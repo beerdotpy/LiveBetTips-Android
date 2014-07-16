@@ -2,12 +2,13 @@ package com.livebettips.activities;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.livebettips.R;
 import com.livebettips.adapters.PredictionAdapter;
 import com.livebettips.objects.Api;
@@ -19,7 +20,7 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class PushedPredictions extends ActionBarActivity {
+public class PushedPredictions extends FragmentActivity {
 
     ListView lv_prediction;
     PredictionAdapter predictionAdapter;
@@ -32,6 +33,8 @@ public class PushedPredictions extends ActionBarActivity {
         setContentView(R.layout.activity_pushedpredictions);
 
         ctx = this;
+
+        Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
         lv_prediction = (ListView) findViewById(R.id.lv_pushedprediction_prediction);
 
@@ -51,6 +54,8 @@ public class PushedPredictions extends ActionBarActivity {
                 Toast.makeText(ctx,"Please try again",Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
 
 

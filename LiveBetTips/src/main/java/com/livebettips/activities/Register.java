@@ -1,10 +1,10 @@
 package com.livebettips.activities;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.livebettips.R;
 import com.livebettips.objects.Api;
 import com.livebettips.objects.User;
@@ -28,7 +29,7 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
-public class Register extends Activity {
+public class Register extends ActionBarActivity {
 
     Button bt_register;
     EditText et_email,et_password,et_repassword;
@@ -44,6 +45,8 @@ public class Register extends Activity {
         setContentView(R.layout.activity_register);
 
         ctx = this;
+
+        Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
         bt_register = (Button) findViewById(R.id.bt_register_register);
         et_email = (EditText) findViewById(R.id.et_register_email);

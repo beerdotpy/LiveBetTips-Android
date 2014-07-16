@@ -50,17 +50,7 @@ public class Login extends ActionBarActivity {
 
         ctx = this;
 
-        SlidingMenu slidingMenu = new SlidingMenu(ctx);
-        slidingMenu.setMode(SlidingMenu.LEFT);
-        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        slidingMenu.setShadowWidthRes(R.dimen.slidingmenu_shadow_width);
-        //slidingMenu.setShadowDrawable(R.drawable.slidingmenu_shadow);
-        slidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        slidingMenu.setFadeDegree(0.35f);
-        slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        slidingMenu.setMenu(R.layout.slidingmenu);
-
-      //  getActionBar().setDisplayHomeAsUpEnabled(true);
+        Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
         preferences = ctx.getSharedPreferences("bettips", MODE_PRIVATE);
         final SharedPreferences.Editor editor = preferences.edit();
@@ -125,6 +115,7 @@ public class Login extends ActionBarActivity {
 
                 user.setEmail(et_email.getText().toString());
                 user.setPassword(et_password.getText().toString());
+                user.setGCM_ID(preferences.getString("GCM_REG_ID","null"));
                 final ProgressDialog progressDialog = new ProgressDialog(ctx);
                 progressDialog.setTitle("Please Wait");
                 progressDialog.setMessage("Logging in");
@@ -139,6 +130,7 @@ public class Login extends ActionBarActivity {
                                 profile.getAuthToken());
                         editor.putInt("userID", profile.getId());
                         editor.putString("authToken", profile.getAuthToken());
+                        editor.putBoolean("isLoggedIn",true);
                         editor.commit();
                         progressDialog.dismiss();
 

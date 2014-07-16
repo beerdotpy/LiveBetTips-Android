@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.livebettips.R;
 import com.livebettips.adapters.PredictionAdapter;
 import com.livebettips.objects.Api;
@@ -34,6 +35,9 @@ public class PurchasedPredictions extends ActionBarActivity {
         setContentView(R.layout.activity_purchased_predictions);
 
         ctx = this;
+
+        Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+
         prefs = ctx.getSharedPreferences("bettips",MODE_PRIVATE);
 
         userID = prefs.getInt("userID",-1);
