@@ -6,7 +6,7 @@ public class User {
     private Integer id;
     private String email;
     private String password;
-    private String GCM_ID;
+    private String gcm_id;
 
     public Integer getId(){
        return id;
@@ -24,11 +24,11 @@ public class User {
     public String getPassword(){
         return password;
     }
-    public String getGCM_ID(){
-        return GCM_ID;
+    public String getGcm_id(){
+        return gcm_id;
     }
-    public void setGCM_ID(String GCM_ID){
-        this.GCM_ID = GCM_ID;
+    public void setGcm_id(String GCM_ID){
+        this.gcm_id = GCM_ID;
     }
 
 

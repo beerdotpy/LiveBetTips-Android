@@ -27,8 +27,8 @@ public class GcmIntentService extends IntentService{
      *
      * @param name Used to name the worker thread, important only for debugging.
      */
-    public GcmIntentService(String name) {
-        super(name);
+    public GcmIntentService() {
+        super("GCMINTENTSERVICE");
     }
 
     @Override
@@ -58,9 +58,9 @@ public class GcmIntentService extends IntentService{
             } else if (GoogleCloudMessaging.
                     MESSAGE_TYPE_MESSAGE.equals(messageType)) {
                 // This loop represents the service doing some work.
-                for (int i=0; i<5; i++) {
+                for (int i=0; i<2; i++) {
                     Log.i(TAG, "Working... " + (i+1)
-                            + "/5 @ " + SystemClock.elapsedRealtime());
+                            + "/2 @ " + SystemClock.elapsedRealtime());
                     try {
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {

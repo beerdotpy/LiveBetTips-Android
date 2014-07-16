@@ -115,7 +115,7 @@ public class Login extends ActionBarActivity {
 
                 user.setEmail(et_email.getText().toString());
                 user.setPassword(et_password.getText().toString());
-                user.setGCM_ID(preferences.getString("GCM_REG_ID","null"));
+                user.setGcm_id(preferences.getString("GCM_REG_ID","null"));
                 final ProgressDialog progressDialog = new ProgressDialog(ctx);
                 progressDialog.setTitle("Please Wait");
                 progressDialog.setMessage("Logging in");
