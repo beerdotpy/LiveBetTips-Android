@@ -66,7 +66,7 @@ public class PredictionAdapter extends BaseAdapter {
         myViewHolder.tv_league.setText(predictions.get(position).getLeagueType());
         myViewHolder.tv_homeTeam.setText(predictions.get(position).getHomeTeam());
         myViewHolder.tv_awayTeam.setText(predictions.get(position).getAwayTeam());
-        myViewHolder.tv_date.setText(predictions.get(position).getDateTimeCreated());
+        myViewHolder.tv_date.setText(predictions.get(position).getDateTimeCreated().split("T")[0]);
         myViewHolder.tv_status.setText(predictions.get(position).getIsPredictionVerified());
 
         return convertView;

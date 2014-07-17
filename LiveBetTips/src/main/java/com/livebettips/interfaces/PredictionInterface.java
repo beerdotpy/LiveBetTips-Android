@@ -2,6 +2,7 @@ package com.livebettips.interfaces;
 
 
 import com.livebettips.objects.Prediction;
+import com.livebettips.objects.PredictionDetail;
 
 import java.util.List;
 
@@ -16,5 +17,9 @@ public interface PredictionInterface {
 
     @GET("/user/{userID}/predictions/")
     void getPurchasedPredictions(@Path("userID") int userID,Callback<List<Prediction>> callback);
+
+    @GET("/user/{userID}/prediction/{predictionID}")
+    void getPredictionDetail(@Path("userID") int userID,@Path("predictionID") int predictionID,
+                                 Callback<PredictionDetail> callback);
 
 }

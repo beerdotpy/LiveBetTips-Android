@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/match_info"
+        android:layout_marginTop="@dimen/default_gap"
+        android:background="@color/oil"
+        android:layout_marginLeft="@dimen/default_gap"
+        android:layout_marginRight="@dimen/default_gap">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/tv_prediction_leaguetype"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_top_tv"
+            android:textColor="#ffffff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/tv_prediction_match"
+            android:layout_marginTop="@dimen/default_gap"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/match_info"
+        android:layout_marginTop="@dimen/default_gap"
+        android:background="@color/oil"
+        android:id="@+id/match_message"
+        android:layout_marginLeft="@dimen/default_gap"
+        android:layout_marginRight="@dimen/default_gap">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/tv_prediction_message"
+            android:layout_marginTop="@dimen/default_gap"
+            android:layout_marginLeft="@dimen/default_gap"
+            android:textColor="#ffffff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/match_message"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/default_gap"
+        android:background="@color/oil"
+        android:layout_marginLeft="@dimen/default_gap"
+        android:layout_marginRight="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/default_gap">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=""
+            android:id="@+id/tv_prediction_name"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_top_tv"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

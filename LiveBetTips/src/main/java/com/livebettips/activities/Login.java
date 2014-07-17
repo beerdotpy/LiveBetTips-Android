@@ -126,9 +126,9 @@ public class Login extends ActionBarActivity {
                     @Override
                     public void success(Profile profile, Response response) {
 
-                        Log.d("ID Username authToken", profile.getId().toString() +" "+ profile.getUsername() +" "+
-                                profile.getAuthToken());
+                        Log.d("ID  authToken", profile.getId().toString() +" "+ profile.getAuthToken());
                         editor.putInt("userID", profile.getId());
+                        editor.putString("userEmail",user.getEmail());
                         editor.putString("authToken", profile.getAuthToken());
                         editor.putBoolean("isLoggedIn",true);
                         editor.commit();

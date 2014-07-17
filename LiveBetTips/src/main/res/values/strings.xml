@@ -10,5 +10,7 @@
     <string name="title_activity_predictions">Predictions</string>
     <string name="title_activity_purchased_predictions">My Tips</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_prediction_detail">Prediction Detail</string>
+    <string name="title_activity_contact_us">ContactUs</string>
 
 </resources>

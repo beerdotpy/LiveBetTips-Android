@@ -60,7 +60,14 @@
 
         <service android:name="com.livebettips.services.GcmIntentService" />
 
-
+        <activity
+            android:name="com.livebettips.activities.ShowPredictionDetail"
+            android:label="@string/title_activity_prediction_detail" >
+        </activity>
+        <activity
+            android:name="com.livebettips.activities.ContactUs"
+            android:label="@string/title_activity_contact_us" >
+        </activity>
     </application>
 
 </manifest>

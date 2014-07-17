@@ -1,11 +1,14 @@
 package com.livebettips.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,9 +28,11 @@ public class PurchasedPredictions extends ActionBarActivity {
 
     ListView lv_prediction;
     PredictionAdapter predictionAdapter;
+    List<Prediction> prediction1;
     Context ctx;
     SharedPreferences prefs;
     int userID;
+    Boolean isLoggedIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +46,34 @@ public class PurchasedPredictions extends ActionBarActivity {
         prefs = ctx.getSharedPreferences("bettips",MODE_PRIVATE);
 
         userID = prefs.getInt("userID",-1);
+        isLoggedIn = prefs.getBoolean("isLoggedIn",false);
 
 
         lv_prediction = (ListView) findViewById(R.id.lv_purchased_predictions_predictions);
+
+        lv_prediction.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(isLoggedIn) {
+                    Intent showPrediction = new Intent(PurchasedPredictions.this, ShowPredictionDetail.class);
+                    showPrediction.putExtra("predictionID", prediction1.get(position).getId());
+                    showPrediction.putExtra("leagueType",prediction1.get(position).getLeagueType());
+                    showPrediction.putExtra("homeTeam",prediction1.get(position).getHomeTeam());
+                    showPrediction.putExtra("awayTeam",prediction1.get(position).getAwayTeam());
+                    showPrediction.putExtra("userID", userID);
+                    startActivity(showPrediction);
+                }else{
+                    Toast.makeText(ctx,"Login is required to view the tip",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         Api.predictionInterface.getPurchasedPredictions(userID, new Callback<List<Prediction>>() {
 
             @Override
             public void success(List<Prediction> predictions, Response response) {
-
+                prediction1 = predictions;
                 predictionAdapter = new PredictionAdapter(ctx, predictions);
                 lv_prediction.setAdapter(predictionAdapter);
 

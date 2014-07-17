@@ -12,7 +12,7 @@ public class Prediction {
     private String awayTeam;
     private Boolean isCompleted;
     private Integer tipDetail;
-    private String dateTimeCreated;
+    private String DateTimeCreated;
     private String isPredictionVerified;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -108,15 +108,15 @@ public class Prediction {
     }
 
     public String getDateTimeCreated() {
-        return dateTimeCreated;
+        return DateTimeCreated;
     }
 
     public void setDateTimeCreated(String dateTimeCreated) {
-        this.dateTimeCreated = dateTimeCreated;
+        this.DateTimeCreated = dateTimeCreated;
     }
 
     public Prediction withDateTimeCreated(String dateTimeCreated) {
-        this.dateTimeCreated = dateTimeCreated;
+        this.DateTimeCreated = dateTimeCreated;
         return this;
     }
 

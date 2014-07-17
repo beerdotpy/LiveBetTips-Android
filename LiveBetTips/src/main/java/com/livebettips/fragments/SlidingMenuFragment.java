@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.livebettips.R;
+import com.livebettips.activities.ContactUs;
 import com.livebettips.activities.Login;
 import com.livebettips.activities.PurchasedPredictions;
 import com.livebettips.activities.Register;
@@ -61,10 +62,22 @@ public class SlidingMenuFragment extends Fragment {
                            getActivity().startActivity(myIntent);
                        }else{
                            Toast.makeText(getActivity().getApplicationContext(), "Please Login", Toast.LENGTH_LONG).show();
+                           Intent myIntent = new Intent(getActivity(), Login.class);
+                           getActivity().startActivity(myIntent);
                        }
                        break;
-                   case 1:break;
-                   case 2:break;
+                   case 1:
+                       if(isLoggedIn) {
+                       Intent myIntent2 = new Intent(getActivity(), ContactUs.class);
+                       getActivity().startActivity(myIntent2);
+                       }else{
+                       Toast.makeText(getActivity().getApplicationContext(), "Please Login", Toast.LENGTH_LONG).show();
+                       Intent myIntent2 = new Intent(getActivity(), Login.class);
+                       getActivity().startActivity(myIntent2);
+                       }
+                       break;
+                   case 2:
+                       break;
                    case 3:
                            Intent myIntent3 = new Intent(getActivity(), Login.class);
                            Log.d("intent3", "login");

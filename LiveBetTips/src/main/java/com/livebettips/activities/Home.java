@@ -26,6 +26,7 @@ public class Home extends Activity {
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     GoogleCloudMessaging gcm;
     String regID;
+    Context ctx;
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
     Boolean isFirstRun;
@@ -38,6 +39,7 @@ public class Home extends Activity {
 
         prefs = getSharedPreferences("bettips", MODE_PRIVATE);
         editor = prefs.edit();
+        ctx= this;
 
         if (checkPlayServices()) {
 
@@ -46,7 +48,7 @@ public class Home extends Activity {
                 editor.putInt("VersionCode", getAppVersion(this));
             }
 
-            Api.applicationContext = this;
+
 
             gcm = GoogleCloudMessaging.getInstance(this);
             regID = getRegistrationID(this);
@@ -55,9 +57,10 @@ public class Home extends Activity {
                 registerInBackground();
             }
 
+           Api.applicationContext = this;
 
             mCountDown.start();
-        }
+       }
     }
 
     private boolean checkPlayServices() {
