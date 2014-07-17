@@ -153,6 +153,8 @@ public class Home extends Activity {
             Intent register = new Intent(Home.this, PushedPredictions.class);
             startActivity(register);
 
+            finish();
+
         }
     };
 

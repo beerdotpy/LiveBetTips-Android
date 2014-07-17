@@ -14,6 +14,7 @@ import com.livebettips.adapters.PredictionAdapter;
 import com.livebettips.objects.Api;
 import com.livebettips.objects.Prediction;
 
+import java.util.Collections;
 import java.util.List;
 
 import retrofit.Callback;
@@ -43,6 +44,7 @@ public class PushedPredictions extends FragmentActivity {
             @Override
             public void success(List<Prediction> predictions, Response response) {
 
+                Collections.reverse(predictions);
                 predictionAdapter = new PredictionAdapter(ctx,predictions);
                 lv_prediction.setAdapter(predictionAdapter);
 

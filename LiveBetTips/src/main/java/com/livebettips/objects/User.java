@@ -7,6 +7,7 @@ public class User {
     private String email;
     private String password;
     private String gcm_id;
+    private String gcm_type = "Android";
 
     public Integer getId(){
        return id;
