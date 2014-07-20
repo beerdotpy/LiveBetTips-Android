@@ -1,5 +1,6 @@
 package com.livebettips.activities;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -33,6 +34,7 @@ public class PurchasedPredictions extends ActionBarActivity {
     SharedPreferences prefs;
     int userID;
     Boolean isLoggedIn;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +45,15 @@ public class PurchasedPredictions extends ActionBarActivity {
 
         Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
+        progressDialog = new ProgressDialog(ctx);
+        progressDialog.setTitle("Please Wait");
+        progressDialog.setMessage("Fetching Predictions...");
+        progressDialog.setIndeterminate(true);
+        progressDialog.show();
+
         prefs = ctx.getSharedPreferences("bettips",MODE_PRIVATE);
 
-        userID = prefs.getInt("userID",-1);
+        userID = prefs.getInt("userID",0);
         isLoggedIn = prefs.getBoolean("isLoggedIn",false);
 
 
@@ -76,6 +84,7 @@ public class PurchasedPredictions extends ActionBarActivity {
                 prediction1 = predictions;
                 predictionAdapter = new PredictionAdapter(ctx, predictions);
                 lv_prediction.setAdapter(predictionAdapter);
+                progressDialog.dismiss();
 
             }
 
@@ -83,6 +92,7 @@ public class PurchasedPredictions extends ActionBarActivity {
             public void failure(RetrofitError error) {
 
                 Toast.makeText(ctx, "Please try again", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
 

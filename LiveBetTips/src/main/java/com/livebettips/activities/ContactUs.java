@@ -18,7 +18,6 @@ import com.livebettips.R;
 import com.livebettips.objects.Api;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -33,7 +32,7 @@ public class ContactUs extends ActionBarActivity {
     SharedPreferences prefs;
     ProgressDialog progressDialog;
     Context ctx;
-    Map hashMAp;
+    HashMap hashMAp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

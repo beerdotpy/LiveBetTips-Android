@@ -45,10 +45,11 @@ public class Home extends Activity {
 
             isFirstRun = prefs.getBoolean("isFirstRun", true);
             if (isFirstRun) {
+                Log.d("first run","App running for first time");
                 editor.putInt("VersionCode", getAppVersion(this));
+                editor.putBoolean("isFirstRun",false);
+                editor.commit();
             }
-
-
 
             gcm = GoogleCloudMessaging.getInstance(this);
             regID = getRegistrationID(this);
@@ -108,23 +109,26 @@ public class Home extends Activity {
         }
     }
 
-    private void registerInBackground() {
+    public void registerInBackground() {
         new AsyncTask<Void, String, String>() {
 
             @Override
             protected String doInBackground(Void... params) {
                 String msg = "";
                 try {
-                    if (gcm == null) {
+
                         gcm = GoogleCloudMessaging.getInstance(Home.this);
-                    }
-                    regID = gcm.register(SENDER_ID);
+
+                        regID = gcm.register(SENDER_ID);
+
                     msg = "Device registered, registration ID=" + regID;
                     editor.putString("GCM_REG_ID", regID);
                     editor.commit();
 
                 } catch (IOException ex) {
+
                     msg = "Error :" + ex.getMessage();
+
                     // If there is an error, don't just keep trying to register.
                     // Require the user to click a button again, or perform
                     // exponential back-off.

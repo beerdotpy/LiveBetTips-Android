@@ -1,0 +1,42 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.7.+'
+    }
+}
+
+    apply plugin: 'android-library'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile 'com.android.support:support-v4:19.1.+'
+    compile files('libs/bolts.jar')
+}
+
+
+android {
+    compileSdkVersion Integer.parseInt("19")
+    buildToolsVersion '19.1.0'
+    defaultConfig {
+        minSdkVersion Integer.parseInt("9")
+        targetSdkVersion Integer.parseInt("19")
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+    buildTypes {
+    }
+}

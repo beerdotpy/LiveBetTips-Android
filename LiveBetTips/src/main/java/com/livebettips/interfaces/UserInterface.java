@@ -3,7 +3,7 @@ package com.livebettips.interfaces;
 import com.livebettips.objects.Profile;
 import com.livebettips.objects.User;
 
-import java.util.Map;
+import java.util.HashMap;
 
 import retrofit.Callback;
 import retrofit.http.Body;
@@ -18,5 +18,11 @@ public interface UserInterface {
      void userLogin(@Body User user,Callback<Profile> userCallback);
 
     @POST("/user/contactUs/")
-    void userContact(@Body Map hashMap,Callback<Map> callback);
+    void userContact(@Body HashMap hashMap,Callback<HashMap> callback);
+
+    @POST("/user/logout/")
+    void userLogout(@Body HashMap hasMAp,Callback<HashMap> callback);
+
+    @POST("/user/resetpassword/")
+    void userresetPassword(@Body HashMap hasMAp,Callback<HashMap> callback);
 }

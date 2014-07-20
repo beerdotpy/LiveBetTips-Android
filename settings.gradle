@@ -1,2 +1,5 @@
 include ":libraries:SlidingMenu",':LiveBetTips'
+include ":libraries:facebook",':LiveBetTips'
+
+
 

@@ -34,7 +34,7 @@ import retrofit.client.Response;
 
 public class Login extends ActionBarActivity {
 
-    TextView tv_validEmail,tv_validPassword;
+    TextView tv_validEmail,tv_validPassword,tv_resetPassword;
     EditText et_email,et_password;
     Button bt_login;
     String email,password;
@@ -42,6 +42,7 @@ public class Login extends ActionBarActivity {
     User user;
     Context ctx;
     SharedPreferences preferences;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,11 @@ public class Login extends ActionBarActivity {
         setContentView(R.layout.activity_login);
 
         ctx = this;
+
+        progressDialog = new ProgressDialog(ctx);
+        progressDialog.setTitle("Please Wait");
+        progressDialog.setMessage("Logging in");
+        progressDialog.setIndeterminate(true);
 
         Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
@@ -60,6 +66,7 @@ public class Login extends ActionBarActivity {
         tv_validEmail = (TextView) findViewById(R.id.tv_login_validEmail);
         tv_validPassword = (TextView) findViewById(R.id.tv_login_validPassword);
         bt_login = (Button) findViewById(R.id.bt_login_login);
+        tv_resetPassword = (TextView) findViewById(R.id.tv_login_resetPassword);
 
         user = new User();
 
@@ -115,15 +122,11 @@ public class Login extends ActionBarActivity {
 
                 user.setEmail(et_email.getText().toString());
                 user.setPassword(et_password.getText().toString());
-                user.setGcm_id(preferences.getString("GCM_REG_ID","null"));
-                final ProgressDialog progressDialog = new ProgressDialog(ctx);
-                progressDialog.setTitle("Please Wait");
-                progressDialog.setMessage("Logging in");
-                progressDialog.setIndeterminate(true);
+                user.setDeviceID(preferences.getString("GCM_REG_ID",""));
                 progressDialog.show();
 
                 Api.userInterface.userLogin(user, new Callback<Profile>() {
-                    @Override
+                @Override
                     public void success(Profile profile, Response response) {
 
                         Log.d("ID  authToken", profile.getId().toString() +" "+ profile.getAuthToken());
@@ -135,7 +138,6 @@ public class Login extends ActionBarActivity {
                         progressDialog.dismiss();
 
                         Toast.makeText(ctx,"Login Successfully",Toast.LENGTH_SHORT).show();
-
                         Intent intent = new Intent(ctx,PushedPredictions.class);
                         startActivity(intent);
 
@@ -165,6 +167,14 @@ public class Login extends ActionBarActivity {
                 });
 
 
+            }
+        });
+
+        tv_resetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this,ResetPassword.class);
+                startActivity(intent);
             }
         });
 

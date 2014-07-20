@@ -6,30 +6,37 @@ public class User {
     private Integer id;
     private String email;
     private String password;
-    private String gcm_id;
-    private String gcm_type = "Android";
+    private String deviceID;
+    private String deviceType = "Android";
 
     public Integer getId(){
        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
     }
     public void setEmail(String email){
 
         this.email= email;
     }
-    public void setPassword(String passwd){
-        this.password = passwd;
-    }
     public String getEmail(){
         return email;
     }
+
+    public void setPassword(String passwd){
+        this.password = passwd;
+    }
+
     public String getPassword(){
         return password;
     }
-    public String getGcm_id(){
-        return gcm_id;
+
+    public String getDeviceID(){
+        return deviceID;
     }
-    public void setGcm_id(String GCM_ID){
-        this.gcm_id = GCM_ID;
+    public void setDeviceID(String GCM_ID){
+        this.deviceID = GCM_ID;
     }
 
 

@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.livebettips.R;
 import com.livebettips.activities.ContactUs;
 import com.livebettips.activities.Login;
+import com.livebettips.activities.Logout;
 import com.livebettips.activities.PurchasedPredictions;
 import com.livebettips.activities.Register;
 import com.livebettips.adapters.SectionListAdapter;
@@ -32,12 +33,17 @@ public class SlidingMenuFragment extends Fragment {
 
     private ListView sectionListView;
     SharedPreferences prefs;
+    SharedPreferences.Editor editor;
+    Context ctx;
     Boolean isLoggedIn;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        ctx =getActivity();
+
         prefs = Api.applicationContext.getSharedPreferences("bettips", Context.MODE_PRIVATE);
+        editor = prefs.edit();
         isLoggedIn = prefs.getBoolean("isLoggedIn",false);
 
         List<Section> sectionList = createMenu();
@@ -79,10 +85,16 @@ public class SlidingMenuFragment extends Fragment {
                    case 2:
                        break;
                    case 3:
+                       if(isLoggedIn){
+                           Intent myIntent3 = new Intent(getActivity(), Logout.class);
+                           Log.d("intent3", "logout");
+                           getActivity().startActivity(myIntent3);
+
+                       }else {
                            Intent myIntent3 = new Intent(getActivity(), Login.class);
                            Log.d("intent3", "login");
                            getActivity().startActivity(myIntent3);
-
+                       }
                        break;
                    case 4:
                        Intent myIntent4 = new Intent(getActivity(), Register.class);
@@ -105,7 +117,11 @@ public class SlidingMenuFragment extends Fragment {
         sectionList.add(new Section(1,"My Tips"));
         sectionList.add(new Section(2,"Contact Us"));
         sectionList.add(new Section(3,"Info"));
-        sectionList.add(new Section(4,"Login"));
+        if(isLoggedIn) {
+            sectionList.add(new Section(4, "Logout"));
+        }else{
+            sectionList.add(new Section(4, "Login"));
+        }
         sectionList.add(new Section(5,"Register"));
         sectionList.add(new Section(6,"Buy Tips"));
         sectionList.add(new Section(7,"Settings"));

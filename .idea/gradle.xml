@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/LiveBetTips" />
             <option value="$PROJECT_DIR$/libraries" />
             <option value="$PROJECT_DIR$/libraries/SlidingMenu" />
+            <option value="$PROJECT_DIR$/libraries/facebook" />
           </set>
         </option>
       </GradleProjectSettings>

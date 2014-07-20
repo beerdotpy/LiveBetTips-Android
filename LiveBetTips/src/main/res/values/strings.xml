@@ -11,6 +11,9 @@
     <string name="title_activity_purchased_predictions">My Tips</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_prediction_detail">Prediction Detail</string>
-    <string name="title_activity_contact_us">ContactUs</string>
+    <string name="title_activity_contact_us">Contact Us</string>
+    <string name="title_activity_logout">Logout</string>
+    <string name="resetPassword"><u>Forgot your Password ? </u></string>
+    <string name="title_activity_reset_password">Reset Password</string>
 
 </resources>

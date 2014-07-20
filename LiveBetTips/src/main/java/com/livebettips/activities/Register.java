@@ -2,6 +2,7 @@ package com.livebettips.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -155,6 +156,8 @@ public class Register extends ActionBarActivity {
                             tv_validEmail.setText("Email ID successfully registered");
                             Toast.makeText(ctx,"Registered Successfully.\n" +
                                                "Email has been sent for verification ",Toast.LENGTH_LONG).show();
+
+                            startActivity(new Intent(Register.this,Login.class));
                         }
 
                         @Override

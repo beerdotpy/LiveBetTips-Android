@@ -109,4 +109,5 @@ public class GcmIntentService extends IntentService{
         mBuilder.setContentIntent(contentIntent);
         mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
+
 }
