@@ -23,7 +23,7 @@ public interface PredictionInterface {
     void getPredictionDetail(@Path("userID") int userID,@Path("predictionID") int predictionID,
                                  Callback<PredictionDetail> callback);
 
-    @GET("/predictions/filter")
+    @GET("/filter/")
     void getFilter(Callback<Filter> getFilter);
 
 }

@@ -1,7 +1,6 @@
 package com.livebettips.fragments;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.livebettips.R;
-import com.livebettips.activities.PushedPredictions;
 
 import java.util.List;
 
@@ -48,10 +46,16 @@ public class FilterFragment extends DialogFragment {
 
 
     }
+
+    public interface DialogListener {
+        void onFinishEditDialog(String league,String prediction);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -65,11 +69,10 @@ public class FilterFragment extends DialogFragment {
         bt_apply.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // When button is clicked, call up to owning activity.
-                Intent myIntent = new Intent(getActivity(), PushedPredictions.class);
-                myIntent.putExtra("isFilter",true);
-                myIntent.putExtra("league",spinner_league.getSelectedItem().toString());
-                myIntent.putExtra("prediction",spinner_predictionName.getSelectedItem().toString());
-                getActivity().startActivity(myIntent);
+                DialogListener activity = (DialogListener) getActivity();
+                activity.onFinishEditDialog(spinner_league.getSelectedItem().toString()
+                                            ,spinner_predictionName.getSelectedItem().toString());
+                dismiss();
             }
         });
 

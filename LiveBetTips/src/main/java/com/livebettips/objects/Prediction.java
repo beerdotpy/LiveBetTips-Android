@@ -1,8 +1,5 @@
 package com.livebettips.objects;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Prediction {
 
     private Integer id;
@@ -14,20 +11,19 @@ public class Prediction {
     private Integer tipDetail;
     private String DateTimeCreated;
     private String isPredictionVerified;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public Integer getId() {
+    public Prediction(){
+
+    }
+
+    public Integer getID() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+   public void setID(Integer id){
+       this.id = id;
 
-    public Prediction withId(Integer id) {
-        this.id = id;
-        return this;
-    }
+   }
 
     public String getLeagueType() {
         return leagueType;
@@ -131,14 +127,6 @@ public class Prediction {
     public Prediction withIsPredictionVerified(String isPredictionVerified) {
         this.isPredictionVerified = isPredictionVerified;
         return this;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

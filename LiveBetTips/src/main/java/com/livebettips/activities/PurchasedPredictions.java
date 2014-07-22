@@ -64,7 +64,7 @@ public class PurchasedPredictions extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(isLoggedIn) {
                     Intent showPrediction = new Intent(PurchasedPredictions.this, ShowPredictionDetail.class);
-                    showPrediction.putExtra("predictionID", prediction1.get(position).getId());
+                    showPrediction.putExtra("predictionID", prediction1.get(position).getID());
                     showPrediction.putExtra("leagueType",prediction1.get(position).getLeagueType());
                     showPrediction.putExtra("homeTeam",prediction1.get(position).getHomeTeam());
                     showPrediction.putExtra("awayTeam",prediction1.get(position).getAwayTeam());

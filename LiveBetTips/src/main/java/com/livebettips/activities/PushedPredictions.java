@@ -34,7 +34,7 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class PushedPredictions extends ActionBarActivity {
+public class PushedPredictions extends ActionBarActivity implements FilterFragment.DialogListener{
 
     ListView lv_prediction;
     PredictionAdapter predictionAdapter;
@@ -78,7 +78,7 @@ public class PushedPredictions extends ActionBarActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(isLoggedIn) {
                     Intent showPrediction = new Intent(PushedPredictions.this, ShowPredictionDetail.class);
-                    showPrediction.putExtra("predictionID", prediction1.get(position).getId());
+                    showPrediction.putExtra("predictionID", prediction1.get(position).getID());
                     showPrediction.putExtra("leagueType",prediction1.get(position).getLeagueType());
                     showPrediction.putExtra("homeTeam",prediction1.get(position).getHomeTeam());
                     showPrediction.putExtra("awayTeam",prediction1.get(position).getAwayTeam());
@@ -95,28 +95,9 @@ public class PushedPredictions extends ActionBarActivity {
             @Override
             public void onClick(View v) {
 
-            Api.predictionInterface.getFilter(new Callback<Filter>() {
-                @Override
-                public void success(Filter filter, Response response) {
-
-                    league = filter.getLeague();
-                    league.add(0,"ALL");
-                    predictionName = filter.getPredictionName();
-                    predictionName.add(0,"ALL");
-
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    DialogFragment newFragment = new FilterFragment(league,predictionName);
-                    newFragment.show(ft,"sda");
-
-                }
-
-                @Override
-                public void failure(RetrofitError error) {
-
-                    Toast.makeText(ctx,"Some error occured.Please try again",Toast.LENGTH_LONG).show();
-
-                }
-            });
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                DialogFragment newFragment = new FilterFragment(league,predictionName);
+                newFragment.show(ft,"sda");
 
 
             }
@@ -126,6 +107,23 @@ public class PushedPredictions extends ActionBarActivity {
 
             @Override
             public void success(List<Prediction> predictions, Response response) {
+
+                Api.predictionInterface.getFilter(new Callback<Filter>() {
+                    @Override
+                    public void success(Filter filter, Response response) {
+
+                        league = filter.getLeague();
+                        league.add(0,"ALL");
+                        predictionName = filter.getPredictionName();
+                        predictionName.add(0,"ALL");
+                    }
+                    @Override
+                    public void failure(RetrofitError error) {
+
+                        Toast.makeText(ctx,"Some error occured.Please try again",Toast.LENGTH_LONG).show();
+
+                    }
+                });
 
                 Collections.reverse(predictions);
                 prediction1 = predictions;
@@ -167,4 +165,15 @@ public class PushedPredictions extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-}
+    @Override
+    public void onFinishEditDialog(String league,String prediction) {
+
+        progressDialog.setMessage("Filtering...");
+        progressDialog.show();
+
+
+
+        }
+
+    }
+
