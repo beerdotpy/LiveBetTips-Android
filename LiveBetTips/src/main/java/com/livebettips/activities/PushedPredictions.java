@@ -1,24 +1,32 @@
 package com.livebettips.activities;
 
+import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.livebettips.R;
 import com.livebettips.adapters.PredictionAdapter;
+import com.livebettips.fragments.FilterFragment;
 import com.livebettips.objects.Api;
+import com.livebettips.objects.Filter;
 import com.livebettips.objects.Prediction;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -26,7 +34,7 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class PushedPredictions extends FragmentActivity {
+public class PushedPredictions extends ActionBarActivity {
 
     ListView lv_prediction;
     PredictionAdapter predictionAdapter;
@@ -36,6 +44,9 @@ public class PushedPredictions extends FragmentActivity {
     int userID;
     SharedPreferences prefs;
     ProgressDialog progressDialog;
+    TextView tv_filter;
+    List<String> league = new ArrayList<String>();
+    List<String> predictionName = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +54,8 @@ public class PushedPredictions extends FragmentActivity {
         setContentView(R.layout.activity_pushedpredictions);
 
         ctx = this;
+
+        tv_filter = (TextView) findViewById(R.id.tv_header_filter);
 
         Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
@@ -77,6 +90,38 @@ public class PushedPredictions extends FragmentActivity {
             }
         });
 
+        tv_filter.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+            @Override
+            public void onClick(View v) {
+
+            Api.predictionInterface.getFilter(new Callback<Filter>() {
+                @Override
+                public void success(Filter filter, Response response) {
+
+                    league = filter.getLeague();
+                    league.add(0,"ALL");
+                    predictionName = filter.getPredictionName();
+                    predictionName.add(0,"ALL");
+
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    DialogFragment newFragment = new FilterFragment(league,predictionName);
+                    newFragment.show(ft,"sda");
+
+                }
+
+                @Override
+                public void failure(RetrofitError error) {
+
+                    Toast.makeText(ctx,"Some error occured.Please try again",Toast.LENGTH_LONG).show();
+
+                }
+            });
+
+
+            }
+        });
+
         Api.predictionInterface.getPushedPredictions(new Callback<List<Prediction>>() {
 
             @Override
@@ -97,9 +142,6 @@ public class PushedPredictions extends FragmentActivity {
                 progressDialog.dismiss();
             }
         });
-
-
-
 
 
     }

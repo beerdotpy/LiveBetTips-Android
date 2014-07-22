@@ -97,6 +97,16 @@
         android:id="@+id/bt_register_register"
         android:layout_below="@+id/et_register_repassword"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dist_et_et" />
+        android:layout_marginTop="@dimen/dist_et_bt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/terms_conditions"
+        android:id="@+id/tv_register_terms"
+        android:layout_below="@+id/tv_register_validrePassword"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"/>
 
 </RelativeLayout>

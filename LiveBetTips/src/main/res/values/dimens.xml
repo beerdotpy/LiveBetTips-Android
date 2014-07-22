@@ -5,6 +5,7 @@
     <dimen name= "margin_top_tv">20dp</dimen>
     <dimen name="dist_tv_et">50dp</dimen>
     <dimen name="dist_et_et">40dp</dimen>
+    <dimen name="dist_et_bt">60dp</dimen>
     <dimen name="width_et">250dp</dimen>
     <dimen name="slidingmenu_shadow_width">5dp</dimen>
     <dimen name="slidingmenu_offset">100dp</dimen>

@@ -1,6 +1,7 @@
 package com.livebettips.interfaces;
 
 
+import com.livebettips.objects.Filter;
 import com.livebettips.objects.Prediction;
 import com.livebettips.objects.PredictionDetail;
 
@@ -21,5 +22,8 @@ public interface PredictionInterface {
     @GET("/user/{userID}/prediction/{predictionID}")
     void getPredictionDetail(@Path("userID") int userID,@Path("predictionID") int predictionID,
                                  Callback<PredictionDetail> callback);
+
+    @GET("/predictions/filter")
+    void getFilter(Callback<Filter> getFilter);
 
 }

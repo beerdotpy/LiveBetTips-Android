@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.livebettips.R;
 import com.livebettips.activities.ContactUs;
+import com.livebettips.activities.InAppBilling;
+import com.livebettips.activities.Info;
 import com.livebettips.activities.Login;
 import com.livebettips.activities.Logout;
 import com.livebettips.activities.PurchasedPredictions;
@@ -83,6 +85,9 @@ public class SlidingMenuFragment extends Fragment {
                        }
                        break;
                    case 2:
+                       Intent myIntent2 = new Intent(getActivity(), Info.class);
+                       Log.d("intent3", "info");
+                       getActivity().startActivity(myIntent2);
                        break;
                    case 3:
                        if(isLoggedIn){
@@ -101,8 +106,13 @@ public class SlidingMenuFragment extends Fragment {
                        Log.d("intent4","register");
                        getActivity().startActivity(myIntent4);
                        break;
-                   case 5:break;
-                   case 6:break;
+                   case 5:
+                       Intent myIntent5 = new Intent(getActivity(), InAppBilling.class);
+                       Log.d("intent5","inappbilling");
+                       getActivity().startActivity(myIntent5);
+
+
+                       break;
                }
            }
        });
@@ -124,8 +134,6 @@ public class SlidingMenuFragment extends Fragment {
         }
         sectionList.add(new Section(5,"Register"));
         sectionList.add(new Section(6,"Buy Tips"));
-        sectionList.add(new Section(7,"Settings"));
-
         return sectionList;
     }
 

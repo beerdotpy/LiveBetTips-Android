@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.livebettips" >
 
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -13,9 +12,11 @@
 
     <uses-permission android:name="com.livebettips.permission.C2D_MESSAGE" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -48,6 +49,9 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_ID" />
 
         <receiver
             android:name="com.livebettips.activities.GcmBroadcastReceiver"
@@ -76,6 +80,23 @@
         <activity
             android:name="com.livebettips.activities.ResetPassword"
             android:label="@string/title_activity_reset_password" >
+        </activity>
+        <activity
+            android:name="com.livebettips.activities.FacebookLogin"
+            android:label="@string/title_activity_facebook_login" >
+        </activity>
+        <activity android:name="com.facebook.LoginActivity" />
+        <activity
+            android:name="com.livebettips.activities.InAppBilling"
+            android:label="@string/title_activity_in_app_billing" >
+        </activity>
+        <activity
+            android:name="com.livebettips.activities.Info"
+            android:label="@string/title_activity_info" >
+        </activity>
+        <activity
+            android:name="com.livebettips.fragments.FilterFragment"
+            android:label="@string/title_activity_filter_fragment" >
         </activity>
     </application>
 
