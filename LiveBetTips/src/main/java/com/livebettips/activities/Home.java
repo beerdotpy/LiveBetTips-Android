@@ -41,27 +41,27 @@ public class Home extends Activity {
         editor = prefs.edit();
         ctx= this;
 
-//        if (checkPlayServices()) {
-//
-//            isFirstRun = prefs.getBoolean("isFirstRun", true);
-//            if (isFirstRun) {
-//                Log.d("first run","App running for first time");
-//                editor.putInt("VersionCode", getAppVersion(this));
-//                editor.putBoolean("isFirstRun",false);
-//                editor.commit();
-//            }
-//
-//            gcm = GoogleCloudMessaging.getInstance(this);
-//            regID = getRegistrationID(this);
-//
-//            if (regID.isEmpty()) {
-//                registerInBackground();
-//            }
+        if (checkPlayServices()) {
+
+            isFirstRun = prefs.getBoolean("isFirstRun", true);
+            if (isFirstRun) {
+                Log.d("first run","App running for first time");
+                editor.putInt("VersionCode", getAppVersion(this));
+                editor.putBoolean("isFirstRun",false);
+                editor.commit();
+            }
+
+            gcm = GoogleCloudMessaging.getInstance(this);
+            regID = getRegistrationID(this);
+
+            if (regID.isEmpty()) {
+                registerInBackground();
+            }
 
            Api.applicationContext = this;
 
             mCountDown.start();
-  //     }
+       }
     }
 
     private boolean checkPlayServices() {

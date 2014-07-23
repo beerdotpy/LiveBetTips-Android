@@ -10,6 +10,7 @@ import java.util.List;
 import retrofit.Callback;
 import retrofit.http.GET;
 import retrofit.http.Path;
+import retrofit.http.Query;
 
 public interface PredictionInterface {
 
@@ -25,5 +26,10 @@ public interface PredictionInterface {
 
     @GET("/filter/")
     void getFilter(Callback<Filter> getFilter);
+
+    @GET("/predictions/filter/")
+    void filterPredictions(@Query("league") String league,@Query("predictionName") String predictionName,
+                            Callback<List<Prediction>> callback);
+
 
 }

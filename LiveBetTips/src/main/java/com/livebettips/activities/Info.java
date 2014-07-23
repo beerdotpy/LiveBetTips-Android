@@ -1,7 +1,9 @@
 package com.livebettips.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -39,6 +41,14 @@ public class Info extends ActionBarActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent back = new Intent(this,PushedPredictions.class);
+        finish();
+        startActivity(back);
     }
 
 }

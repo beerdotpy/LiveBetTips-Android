@@ -2,6 +2,7 @@ package com.livebettips.activities;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -117,5 +118,14 @@ public class ContactUs extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent back = new Intent(this,PushedPredictions.class);
+        finish();
+        startActivity(back);
+    }
+
 
 }

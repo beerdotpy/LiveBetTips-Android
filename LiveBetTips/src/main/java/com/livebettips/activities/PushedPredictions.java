@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -171,9 +172,47 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
         progressDialog.setMessage("Filtering...");
         progressDialog.show();
 
+        if(league.contentEquals("ALL") && prediction.contentEquals("ALL")){
+            progressDialog.dismiss();
+            return ;
+        }else if(league.contentEquals("ALL")){
+                  league = "null";
+        }else if(prediction.contentEquals("ALL")) {
+                   prediction = "null";
+        }
+
+        Api.predictionInterface.filterPredictions(league,prediction, new Callback<List<Prediction>>() {
+            @Override
+            public void success(List<Prediction> predictions, Response response) {
+
+                Collections.reverse(predictions);
+                prediction1 = predictions;
+                predictionAdapter = new PredictionAdapter(ctx,predictions);
+                lv_prediction.setAdapter(predictionAdapter);
+                progressDialog.dismiss();
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+
+                Toast.makeText(ctx,"Some error occured.Please try again!",Toast.LENGTH_LONG).show();
+                progressDialog.dismiss();
+
+            }
+        });
+
+
 
 
         }
-
+    @Override
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent back = new Intent(this,PushedPredictions.class);
+        finish();
+        startActivity(back);
     }
+
+
+}
 

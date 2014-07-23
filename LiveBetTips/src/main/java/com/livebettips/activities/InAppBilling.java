@@ -1,39 +1,45 @@
 package com.livebettips.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.android.vending.billing.IInAppBillingService;
 import com.livebettips.R;
 import com.livebettips.util.IabHelper;
 import com.livebettips.util.IabResult;
 import com.livebettips.util.Inventory;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class InAppBilling extends ActionBarActivity {
 
     IabHelper mHelper;
-    String key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwelLplECXOl8ddRu+C5zguREkOaUY3Pj/e6u2cpKwPF78HgRsfsKS0XTjNtskMMORQpfBHACRESWZ9r6DoimmwCaLCjRXJCorEvZVQYjiTP+YFS7nkRaIEtbrXO1ZR0qcvTfNBiJM1X+hqkbXlsuoLjp1gNi00xzis98au57ZYR8grKXvtq/jYQzSnJtP2NAibCLmEW0CLlF63r+1yVsEMGMIoK3+cdji5uj25TZ4VQG2PwPUS9+m/ZgXVT9J038gaVk5QYieWg39ZfC5uGCBO4sy0LJg65LCeP5bajb1dhDb9DTKVsL+w7F636lPHj87XsnSEBG2qmbm+6b6u4yJwIDAQAB";
+    IInAppBillingService mservice;
     String TAG = "LiveBetTips";
-    List additionalSkuList;
+    String key1 = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwelLplECXOl8ddRu+C5zguREkOaUY3Pj/e6u2cpKwPF78HgRsfsKS0XTjNtskMMORQpfBHACR";
+    String key2 = "ESWZ9r6DoimmwCaLCjRXJCorEvZVQYjiTP+YFS7nkRaIEtbrXO1ZR0qcvTfNBiJM1X+hqkbXlsuoLjp1gNi00xzis98au57ZYR8grKXvtq/jYQzSnJtP2";
+    String key3 = "NAibCLmEW0CLlF63r+1yVsEMGMIoK3+cdji5uj25TZ4VQG2PwPUS9+m/ZgXVT9J038gaVk5QYieWg39ZfC5uGCBO4sy0LJg65LCeP5bajb1dhDb9DTKVs";
+    String key4 = "L+w7F636lPHj87XsnSEBG2qmbm+6b6u4yJwIDAQAB";
+    Bundle skuDetails = new Bundle();
+    String sku;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_app_billing);
 
-        additionalSkuList = new ArrayList();
+
+        final ArrayList<String> additionalSkuList  = new ArrayList<String>();
         additionalSkuList.add("test2");
         additionalSkuList.add("credit_1");
         additionalSkuList.add("credit_5");
 
-
-        mHelper = new IabHelper(this,key);
+        mHelper = new IabHelper(InAppBilling.this,key1+key2+key3+key4);
         mHelper.enableDebugLogging(true);
 
         mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
@@ -53,7 +59,6 @@ public class InAppBilling extends ActionBarActivity {
         });
     }
 
-
     IabHelper.QueryInventoryFinishedListener
             mQueryFinishedListener = new IabHelper.QueryInventoryFinishedListener() {
         public void onQueryInventoryFinished(IabResult result, Inventory inventory)
@@ -61,7 +66,9 @@ public class InAppBilling extends ActionBarActivity {
             if (result.isFailure()) {
                 // handle error
                 return;
+
             }
+
 
             Log.d("result",result.toString());
 
@@ -84,6 +91,7 @@ public class InAppBilling extends ActionBarActivity {
         super.onDestroy();
         if (mHelper != null) mHelper.dispose();
         mHelper = null;
+
     }
 
 //    @Override
@@ -119,5 +127,11 @@ public class InAppBilling extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    @Override
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent back = new Intent(this,PushedPredictions.class);
+        finish();
+        startActivity(back);
+    }
 }

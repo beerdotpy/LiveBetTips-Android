@@ -199,5 +199,11 @@ public class Login extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    @Override
+    public void onBackPressed() {
+        Log.d("CDA", "onBackPressed Called");
+        Intent back = new Intent(this,PushedPredictions.class);
+        finish();
+        startActivity(back);
+    }
 }
