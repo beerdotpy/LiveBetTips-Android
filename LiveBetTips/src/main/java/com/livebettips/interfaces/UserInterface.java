@@ -25,4 +25,9 @@ public interface UserInterface {
 
     @POST("/user/resetpassword/")
     void userresetPassword(@Body HashMap hasMAp,Callback<HashMap> callback);
+
+    @POST("/user/credit/buy/")
+    void userbuyCredit(@Body HashMap hasMAp,Callback<HashMap> callback);
+
+
 }

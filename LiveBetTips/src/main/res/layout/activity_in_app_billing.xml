@@ -9,25 +9,53 @@
     tools:context="com.livebettips.activities.InAppBilling"
     android:background="@drawable/background">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Buy Credits"
+        android:textColor="#ffffff"
+        android:id="@+id/tv_buyCredits"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_top_tv" />
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1 Credits"
-        android:id="@+id/button"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="46dp" />
+        android:id="@+id/bt_app_billing_1credit"
+        android:layout_below="@+id/tv_buyCredits"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dist_et_et" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5 Credits"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="48dp" />
+        android:id="@+id/bt_app_billing_5credit"
+        android:layout_below="@+id/bt_app_billing_1credit"
+        android:layout_marginTop="@dimen/dist_et_et"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/tv_app_billing_1price"
+        android:layout_below="@+id/bt_app_billing_1credit"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/tv_app_billing_5price"
+        android:layout_below="@+id/bt_app_billing_5credit"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffff"/>
+
 </RelativeLayout>

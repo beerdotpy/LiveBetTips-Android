@@ -42,10 +42,10 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
     List<Prediction> prediction1;
     Context ctx;
     Boolean isLoggedIn;
-    int userID;
+    int userID,credit;
     SharedPreferences prefs;
     ProgressDialog progressDialog;
-    TextView tv_filter;
+    TextView tv_filter,tv_credit;
     List<String> league = new ArrayList<String>();
     List<String> predictionName = new ArrayList<String>();
 
@@ -57,6 +57,7 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
         ctx = this;
 
         tv_filter = (TextView) findViewById(R.id.tv_header_filter);
+        tv_credit = (TextView) findViewById(R.id.tv_header_credits);
 
         Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
@@ -70,7 +71,10 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
 
         userID = prefs.getInt("userID",0);
         isLoggedIn = prefs.getBoolean("isLoggedIn",false);
+        credit = prefs.getInt("credit",0);
 
+
+        tv_credit.setText(Integer.toString(credit)+" Credits");
 
         lv_prediction = (ListView) findViewById(R.id.lv_pushedprediction_prediction);
 

@@ -9,6 +9,7 @@ public class Profile {
         private Integer id;
         private String username;
         private String authToken;
+        private Integer usercredit;
         private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
         public Integer getId() {
@@ -50,7 +51,16 @@ public class Profile {
             return this;
         }
 
-        public Map<String, Object> getAdditionalProperties() {
+        public Integer getCredit() {
+        return usercredit;
+    }
+
+        public void setCredit(Integer credit) {
+        this.usercredit = credit;
+    }
+
+
+    public Map<String, Object> getAdditionalProperties() {
             return this.additionalProperties;
         }
 

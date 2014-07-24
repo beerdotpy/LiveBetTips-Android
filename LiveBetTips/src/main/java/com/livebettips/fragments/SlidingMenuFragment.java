@@ -106,12 +106,16 @@ public class SlidingMenuFragment extends Fragment {
                        Log.d("intent4","register");
                        getActivity().startActivity(myIntent4);
                        break;
-                   case 5:
+                   case 5:if(isLoggedIn) {
+
                        Intent myIntent5 = new Intent(getActivity(), InAppBilling.class);
-                       Log.d("intent5","inappbilling");
+                       Log.d("intent5", "inappbilling");
                        getActivity().startActivity(myIntent5);
-
-
+                   }else{
+                       Toast.makeText(getActivity().getApplicationContext(), "Please Login", Toast.LENGTH_LONG).show();
+                       Intent myIntent = new Intent(getActivity(), Login.class);
+                       getActivity().startActivity(myIntent);
+                   }
                        break;
                }
            }

@@ -55,6 +55,7 @@ public class Logout extends ActionBarActivity {
                 editor.remove("userID");
                 editor.remove("userEmail");
                 editor.remove("authToken");
+                editor.remove("credit");
                 editor.commit();
                 Toast.makeText(ctx,"You have logged out",Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();

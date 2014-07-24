@@ -134,6 +134,7 @@ public class Login extends ActionBarActivity {
                         editor.putString("userEmail",user.getEmail());
                         editor.putString("authToken", profile.getAuthToken());
                         editor.putBoolean("isLoggedIn",true);
+                        editor.putInt("credit",profile.getCredit());
                         editor.commit();
                         progressDialog.dismiss();
 
