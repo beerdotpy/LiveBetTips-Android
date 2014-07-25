@@ -45,7 +45,7 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
     int userID,credit;
     SharedPreferences prefs;
     ProgressDialog progressDialog;
-    TextView tv_filter,tv_credit;
+    TextView tv_filter,tv_credit,tv_units;
     List<String> league = new ArrayList<String>();
     List<String> predictionName = new ArrayList<String>();
 
@@ -56,8 +56,11 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
 
         ctx = this;
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         tv_filter = (TextView) findViewById(R.id.tv_header_filter);
         tv_credit = (TextView) findViewById(R.id.tv_header_credits);
+        tv_units = (TextView) findViewById(R.id.tv_header_units);
 
         Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
@@ -121,6 +124,7 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
                         league.add(0,"ALL");
                         predictionName = filter.getPredictionName();
                         predictionName.add(0,"ALL");
+                        tv_units.setText(filter.getUnits());
                     }
                     @Override
                     public void failure(RetrofitError error) {
@@ -157,17 +161,16 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
         getMenuInflater().inflate(R.menu.predictions, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Api.slidingMenu.toggle();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -212,9 +215,8 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
     @Override
     public void onBackPressed() {
         Log.d("CDA", "onBackPressed Called");
-        Intent back = new Intent(this,PushedPredictions.class);
         finish();
-        startActivity(back);
+
     }
 
 

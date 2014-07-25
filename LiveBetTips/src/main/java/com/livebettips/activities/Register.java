@@ -48,6 +48,8 @@ public class Register extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         ctx = this;
 
         Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
@@ -60,6 +62,7 @@ public class Register extends ActionBarActivity {
         tv_validPassword = (TextView) findViewById(R.id.tv_register_validPassword);
         tv_validrePassword = (TextView) findViewById(R.id.tv_register_validrePassword);
         tv_terms = (TextView) findViewById(R.id.tv_register_terms);
+        tv_terms.setText(getString(R.string.agree)+" "+getString(R.string.terms));
         user = new User();
 
         bt_register.setEnabled(false);
@@ -188,7 +191,7 @@ public class Register extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(Register.this);
-                builder.setMessage(getString(R.string.terms)
+                builder.setMessage(getString(R.string.termsText)
                         )
                         .setCancelable(true)
                         .setOnCancelListener(new DialogInterface.OnCancelListener() {
@@ -199,7 +202,7 @@ public class Register extends ActionBarActivity {
 
                             }
                         })
-                        .setPositiveButton("Accept",new DialogInterface.OnClickListener() {
+                        .setPositiveButton(getString(R.string.accept),new DialogInterface.OnClickListener() {
 
                             public void onClick(DialogInterface dialog, int which) {
                                 // TODO Auto-generated method stub
@@ -221,17 +224,16 @@ public class Register extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.register, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Api.slidingMenu.toggle();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

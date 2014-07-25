@@ -51,6 +51,8 @@ public class Login extends ActionBarActivity {
 
         ctx = this;
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         progressDialog = new ProgressDialog(ctx);
         progressDialog.setTitle("Please Wait");
         progressDialog.setMessage("Logging in");
@@ -99,7 +101,7 @@ public class Login extends ActionBarActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-                if (valid && s.length() > 5) {
+                if (valid && s.length() >= 5) {
                     password = s.toString();
                     bt_login.setEnabled(true);
                     tv_validPassword.setText("");
@@ -191,15 +193,16 @@ public class Login extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Api.slidingMenu.toggle();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
+
     @Override
     public void onBackPressed() {
         Log.d("CDA", "onBackPressed Called");

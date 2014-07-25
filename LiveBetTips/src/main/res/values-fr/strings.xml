@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_register">s’inscrire</string>
+    <string name="title_activity_login">login/connection</string>
+    <string name="title_activity_purchased_predictions">s’inscrire</string>
+    <string name="title_activity_contact_us">nous contacter </string>
+    <string name="title_activity_in_app_billing">acheter tuyaux</string>
+    <string name="title_activity_info">infos</string>
+    <string name="info">Le pari en direct ou en temps réel est un type de pari sportif, qui rapporte de grands gains tout en offrant l’opportunité d’assurer son pari.
+                         S’occuper de ce type de pari nécessite beaucoup de temps à consacrer à l’étude des jeux avant qu’ils commencent, mais aussi à leur observation en direct.
+                         Pour l’étude des jeux, il vous faut absolument de la stratégie, de la discipline, du temps et des connaissances sur les paris et les statistiques.
+
+                         Notre équipe suit les jeux choisis en direct et en combinaison avec l\’utilisation des statistiques, fait des prévisions et vous propose le résultat final du jeu.
+                         On tire profit de grandes variations entre les rendements tout au long d\’un match de foot à notre intérêt.
+                         Tous nos clients recevront nos prévisions en direct sur leurs téléphones portables. La seule chose que vous devrez faire sera de placer vos paris.
+
+                         Ce qui est aussi important est la stratégie suivante qu\’on utilise et qu\’on recommande:
+
+                         Miser toujours la même somme d\’argent à chaque pari (Mise Plate / Flat Bet). On choisit ce type de pari parce qu\’il est certain qu\’il y aura des séries des résultats gagnants aussi bien que des résultats ratés. On veut protéger notre capital tout en augmentant nos gains.
+                         On place nos paris aux matchs les plus inattendus pour la même raison déjà mentionnée en haut.
+                         Quand notre pari est confirmé, on le couvre presque toujours puisqu’ainsi on gagne entre 4 à 7%% ou plus.
+                         Tous les paris choisis se déroulent entre la 45e et la 70e minute du match, voire à leur point culminant.
+
+
+                         C\’est quoi une prévision?
+
+                         Voilà notre philosophie sur quoi consiste une prévision.
+                         Selon, nous, parier sur des matchs de foot est une affaire des statistiques. On utilise notre longue expérience principalement guidés par des statistiques.
+
+                         C\’est quoi la couverture de pari?
+
+                         Au fil d\’un match on choisit une issue selon nos prévisions. Si nos prévisions ne sont point confirmées par le jeu, le pari est alors perdant. Contrairement, si nos prévisions sont confirmées avant la fin du match, on a la chance de ne pas perdre tout le capital investi. La manière d’y réussir est de miser sur les deux autres résultats prévus du match avec autant d’argent pour ne pas perdre dans le cas où, à la fin du match, notre première prévision n’est pas confirmée.
+
+                         EXAMPLE:
+
+                         Assurer un pari sur victoire à domicile
+
+                         Disons qu\’on effectue un pari avec une mise de 100 unités sur la victoire de l’équipe à domicile qui débute le match à une cote de 1,80. A la 60ième minute, (quand on donne d\’habitude nos prévisions), on a un match nul. Le prix à ce point du jeu (sans carton rouge) est environ 2,50-2,70. Si un but est marqué par l\’équipe à domicile à ce moment ou plus tard, le prix descend à 1,10 – 1,30.  Ce le moment de couvrir notre pari, en pariant en mode lay (si l\’on joue chez bet exchanges) ce qui signifie qu’on espère que l\’équipe à domicile perdra ou en pariant sur le nul ou la victoire de l\’équipe extérieure (si l’on joue chez des bookmakers conventionnels). Dans tous les cas ci-dessus on couvre nos paris afin de protéger notre investissement de 100 unités. Mais pourquoi agir ainsi ? La réponse à cette question est basée sur des statistiques. Une analyse de plus de 2.500 matchs a démontré que pendant les 10 dernières minutes avec 2 ou 3 minutes d’arrêts de jeu (après la 80ième minute du match) vers 30%% des matchs passent de victoire de l’équipe à domicile au nul ou à victoire de l’équipe extérieure.
+                         Sans couverture de nos paris on aurait un gain des 820 unités tous les 10 matchs [2, 60 x 70%% = 1820 – 1000(10x100) = 820). En couvrant nos paris notre gain se lèverait à 980 unités [2, 40(2, 60-0, 20) x70%% = 1680 – 1000 = 680 +300 (pour les 3 paris, qu’on n’a pas perdus) = 980]. Il s’agit là d’une différence de 16%% des gains de plus, tout simplement par couvrant nos paris. Si un but est marqué pendant les toutes dernières minutes d’un match, on peut couvrir nos paris avec la même somme et en profiter ne s’intéressant point à l’issue finale. Cela rend notre gain plus grand.
+                         On peut de même façon couvrir nos paris, sur PLUS/ MOINS, PARIS DE RÉSULTAT (victoire  à domicile ou nul, victoire à l’extérieur ou nul, victoire à l’extérieur, nul) etc. Voilà l’avantage de parier en temps réel : on a le temps d’éviter de miser sur des matchs qui ne se déroulent pas comme on désirait,  des matchs avec des joueurs blessés, cartons rouges etc., et quand on décide finalement de parier, on a le luxe de couvrir notre investissement (ne pas perdre notre capital) et même encore aux dernières minutes du match tirer des gains de n’importe quelle issue.</string>
+
+    <string name="subject">sujet</string>
+    <string name="yourMessage">votre message</string>
+    <string name="send">envoyer</string>
+    <string name="apply">appliquer</string>
+    <string name="filters">filtres</string>
+    <string name="credits">crédits</string>
+    <string name="email">-e-mail</string>
+    <string name="password">mot de passe</string>
+    <string name="resetPassword"><u>mot de passe oublié  </u></string>
+    <string name="register">s’inscrire</string>
+    <string name="accept">J’accepte</string>
+    <string name="agree"><u>J’accepte</u></string>
+    <string name="terms"><u>termes</u></string>
+    <string name="termsText">C\’est à votre responsabilité d\’assurer que l\’appareil mobile répond à toutes les spécifications techniques nécessaires à vous permettre de vous abonner et utiliser l\’application LiveBetTips. Étant au courant que vous êtes licencié d\’utiliser les  applications Apple seulement sur un appareil qui est à votre possession et sous votre contrôle et qui fonctionne avec Apple iPhone OS, vous devez alors assurer que vous êtes équipé d\’un appareil approprié pour accéder et utiliser n\’importe quelle application Apple.
+
+Termes
+
+En utilisant LiveBetTips, vous acceptez les termes et les conditions d\’utilisation suivants, toutes les lois applicables, et vous acceptez la responsabilité d\’être en conformité avec toute loi locale en vigueur. Si vous n\’acceptez pas ces termes, veuillez ne pas accéder ni utiliser cette application. Le matériel figurant dans l\’application LiveBetTips  est protégé par la loi sur les droits d\’auteur et de marque.
+
+
+Règles d\’ouverture et d\’utilisation d\’un compte
+
+Afin de s\’inscrire et utiliser LiveBetTips, le client doit avoir 18 ans ou plus. Pendant le processus d\’inscription vous serez demandé de confirmer que vous avez 18 ans ou plus. Si vous constatez une utilisation non-autorisée de votre compte ou une violation de sécurité, vous devez informer LiveBetTips. LiveBetTips n\’est responsable d\’aucun dommage ni d\’aucune perte résultant de la non-conformité à cette clause.  Aucune publication erronée ni aucune inexactitude de la part du client ne peuvent être utilisées légalement contre LiveBetTips.
+
+
+Règles de sécurité
+
+Pendant le processus d\’inscription sur LiveBetTips, vous devez choisir votre nom d\’utilisateur (votre adresse électronique) et un mot de passe pour activer le service et votre compte. Il relève de la responsabilité du Titulaire de Compte de ne pas divulguer ces informations confidentielles et privées. Si le Titulaire de Compte vient à soupçonner que ces informations sont tombées entre les mains d\'un tiers, il doit immédiatement prendre contact avec LiveBetTips.
+
+Nos services
+
+LiveBetTips offre en direct des conseils et des prévisions (suggestions) sur des paris possibles ou des jeux.
+
+
+Clause limitative de responsabilité
+
+Vous exprÉssément comprenez et acceptez qu\’on ne sera responsable d\’aucun dommage direct, indirect, spÉcial, fortuit, consécutif, exemplaire, y compris mais sans se limiter À ceux-ci les dommages dus aux pertes de gains, de bonne volontÉ, d\’utilisation, de donnÉes ou d\’autres dommages immatÉriels (mÊme si l\’on a ÉtÉ conseillÉ sur la possibilitÉ de tels dommages) qui rÉsultent ou se produisent par (I) l\’utilisation ou l\’incapacitÉ d\’utiliser le service, (II) le coût d\’acquÉrir des biens substitutifs et/ou des services provenus de n\’importe quelle transaction faite dans ou À travers le service, (III) un accÈs non-autorisÉ ou altération à la transmission de vos donnÉes, ou (IV) tout autre problÈme concernant le service, ou (V) l\’utilisation de l\’application par une personne de capacitÉ lÉgale limitÉe.
+LiveBetTips ne porte aucune responsabilité si un client dÉveloppe une accoutumance aux jeux.  LiveBetTips  n\’est pas responsable si le client offre conseil et suggestions sur les paris et n\’est non plus responsable d\’aucune perte financiÈre ou autre qui rÉsulte de nos conseils ou de nos suggestions À toute forme.
+Loi applicable\n
+Vous acceptez que ces termes d\’utilisation et tout autre différend provenant de votre utilisation de l\’application LiveBetTips ou de nos produits ou services soient régis et interprétés conformément aux lois en vigueur au lieu où se trouve le siège du propriétaire de l\’application et des services de LiveBetTips, sans égard pour son conflit des dispositions juridiques. En vous inscrivant ou en utilisant l\’application et les services LiveBetTips  vous acceptez et vous vous soumettez à la juridiction exclusive et le lieu du pays ou de la ville ou se trouve le siège du propriétaire de l\’application et des services de LiveBetTips
+
+Mode de Paiement
+
+Afin d\’accéder aux prévisions des jeux vous devez posséder des crédits. Les crédits sont disponibles à l\’achat à travers les achats intégrés d\’Apple. Il y a deux produits à acheter. Le produit d\’un crédit (1) et le produit de cinq (5) crédits. Chaque prévision coûte un crédit. Le mode de paiement peut être altéré  par LiveBetTips, fait qui sera signalé aux clients avant l\’achat des crédits.
+
+Déni de responsabilité
+
+LiveBetTips ne garantit pas des gains et ne peut pas être considéré responsable de l\’utilisation des prévisions (suggestions) reçues par son application.
+
+Parier peut s\’avérer très dangereux et les usagers doivent seulement spéculer avec des montants d\’argent qu\’ils peuvent aisément se permettre de perdre. Ils doivent aussi s\’assurer qu\’ils comprennent totalement les risques en question, sans hésiter de chercher conseil si nécessaire.
+
+LiveBetTips n\’est pas responsable de pertes qui résultent de l\’utilisation des prévisions (suggestions) reçues par son application et ne remboursera pas telles pertes.</string>
+
+
+</resources>

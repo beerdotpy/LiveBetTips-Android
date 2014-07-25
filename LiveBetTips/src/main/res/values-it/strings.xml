@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_register">-registrati</string>
+    <string name="title_activity_login">-accedi</string>
+    <string name="title_activity_purchased_predictions">-aquista suggerimenti</string>
+    <string name="title_activity_contact_us">-contattaci </string>
+    <string name="title_activity_in_app_billing">-aquista suggerimenti</string>
+    <string name="title_activity_info">-informazioni</string>
+    
+    <string name="info">Live Betting è una categoria di scommesse, che produce grandi profitti  come pure l’opportunità di  “coprire” le tue scommesse.
+L’occupazione di questa categoria di scommesse richiede dedicazione di molto tempo per lo studio dei giochi prima che si inizino ed anche per la loro osservazione.
+ Per lo studio dei giochi sono necessari, strategia, disciplina, tempo e conoscenza di scommesse e statistiche.
+La nostra squadra guarda le partite scelte live ed in combinazione con l’uso di statistiche fa previsioni e propone il risultato finale della partita.
+Ci sfruttiamo delle grande variazioni del rendimento durante una partita di calcio per il nostro profitto.
+Tutti i nostri clienti riceverrano  le nostre previsioni nei loro cellulari dal vivo.
+L’unica cosa che devi fare è scommettere.
+Ancora importante è la strategia seguente che seguiamo e consigliamo:
+-Scommettere  sempre la stessa somma di soldi (Flat Bet). Scegliamo questo modo di scommesse perchè è certo che ci sarà una serie di risultati di successo così come inefficaci.  Vogliamo proteggere il nostro capitale ed aumentare nello stesso tempo i nostri profitti.
+-Noi sempre giochiamo partite di probabilità per lo stesso motivo come riferito sopra.
+-Quando la nostra scommessa è confermata,  la copriamo quasi sempre perchè in questo modo guadagnamo qualche 4-7% di più.
+-tutte le scommesse scelte da noi si giocano tra il 45° ed il 70° minuto della partita, che è il suo culmine.
+------Che cos’è  una previsione?
+Questa è la nostra filosofia su ciò che costituisce una “previsione”.
+Per noi , scommettere in partite di calcio  è una questione di statistiche. Usiamo la nostra lunga esperienza principalmente guidata dalle statistiche.
+
+------Che cos’è il coprire una scommessa?
+Durante una partita scegliamo un risultato secondo le nostre previsioni. Se le nostre previsioni non sono confermate in qualsiuasi punto del gioco, allora le scommesse sono perse. Al contrario, se le nostre previsioni si confermano prima della fine della partita, abbiamo la possibilità di non perdere il capitale investito. Il modo di per raggiungere questo obiettivo è  quello di scommettere   agli altri due risultati della partita con una tale somma di soldi così che  non perdiamo se, alla fine della partita, la nostra prima previsione non viene confermata.
+ESEMPIO:
+Copriamo su una vittoria in casa.
+Diciamo che stiamo giocando una vittoria in casa che inizia la partita con probabilità di 1,80, e scommettiamo 100 unità. Al 60° minuto, (quando di solito diamo le nostre previsioni), abbiamo un pareggio. Il prezzo in questo punto della partita (senza alcun cartellino rosso) è circa 2,50-2,70. Se viene segnato un goal per la squadra di casa in quel momento o successivamente, il prezzo scende a 1,10-1,30. Questo è il momento di coprire la nostra scommessa, ponendo vittoria a casa (se giochiamo a scambi scommessa), oppure  scommettere su pareggio e vittoria della squadra ospitata (giochiamo su bookmakers convenzionali). In entrambe le situazioni sopra copriamo le nostre scommesse per proteggere il nostro investimento di 100 unità. Ma perché lo facciamo? La risposta a questa domanda si basa sulle statistiche. Analisi di 2500 + partite ha dimostrato che negli ultimi 10 minuti +2 o 3 tempi supplementari, (dopo il 80° minuto della partita), circa il 30% delle partite vanno da vittoria a casa, a pareggio o vittoria della squadra ospitata. Senza coprire le nostre scommesse avremmo un profitto di 820 unità ogni 10 partite [2, 60 x 70% = 1820 – 1000(10x100) = 820). Coprendo [2, 40(2, 60-0, 20) x70% = 1680 – 1000 = 680 +300 (le 3 partite che NON ABBIAMO PERSO) = 980. QUESTA ‘E UNA DIFFERENZA DI 16% DI PROFITTO, SOLAMENTE COPRENDO LE NOSTRE PARTITE. Se il goal viene segnato negli ultimi minuti di una partita, possiamo coprire le nostre scommesse con la stessa somma di soldi, ed avere un profitto, qualunque sia l’esito della partita. Questo fa il nostro profitto ancora più grande.
+Possiamo fare coperture simili sulle nostre scommesse,  in OVER, UNDER, VITTORIA A CASA O PAREGGIO, VITTORIA DI SQUADRA OSPITATA O PAREGGIO, VITTORIA DI SQUADRA OSPITATA, PAREGGIO ecc. Questo è il vantaggio di Live Bet: hai il tempo di evitare le partite che non vanno nel modo desiderato, evitare le scommesse su partite con lesioni di gioco, cartellini rossi ecc e quando scommetti su partite, hai il lusso di coprire il tuo investimento (non perdendo il tuo capitale), e se negli ultimi momenti della partita, fare un profitto su ogni risultato della partita.
+
+</string>
+
+
+    <string name="termsText">È la vostra responsabilità di  assicurare che il dispositivo cellulare soddisfa tutte le specificazioni tecniche necessarie per permettervi l\’accesso e uso di LiveBetTips app. Apple Applicazioni  sono concessi in licenza per uso su dispositivo posseduto o controllato da voi ed usando Apple iPhone OS così dovete assicurarvi che usiate un dispositivo appropriato per accedere ed utilizzare qualsiasi Apple Applicazione.
+Termini.
+Accedendo LiveBetTips, l\'utente accetta di essere vincolato da questi Termini e Condizioni di utilizzo, tutte le leggi ed i regolamenti applicabili, ed acetta di essere responsabile della conformità alle leggi locali vigenti. Se non siete d\’accordo con nessuno di questi termini, vi è vietato l\’uso o accesso a questo applicazione. I materiali contenuti in LiveBetTips app sono protetti da diritto d\'autore e diritto dei marchi.
+REGISTRAZIONE
+Il cliente deve avere 18 anni o di più per essere registrato e coinvolto i servizi di LiveBetTips.  Durante il processo di registrazione vi verrà richiesto di accettare di avere 18 anni o di più. Se notate alcun uso non autorizzato del proprio account o qualsiasi violazione di sicurezza dovreste avvisare LiveBetTips. LiveBetTips non è responsabile per danni o perdite derivati dalla mancanza di rispetto di questa clausola.
+Sicurezza di Clienti
+
+Durante la registrazione con LiveBetTips, si seleziona un nome utente (il tuo indirizzo e-mail) e una password per attivare il servizio e il tuo account. Voi siete esclusivamente responsabili per mantenere il vostro username e password confidenziali e portate piena responsabilità per ogni attività svolta sotto il vostro nome utente e password. È la vostra responsabilità contattare immediatamente LiveBetTips in caso di qualsiasi uso non autorizzato dei propri dati di accesso personali.
+Il nostro servizio
+LiveBetTips fornisce consigli dal vivo e previsioni (suggerimenti) per scommesse o giochi d\’azzardo.
+LIMITAZIONE DI RESPONSABILITÀ
+
+L\'UTENTE RICONOSCE E ACCETTA ESPRESSAMENTE CHE NON SAREMO RESPONSABILI PER DANNI DIRETTI, INDIRETTI, SPECIALI, ACCIDENTALI, CONSEGUENTI O ESEMPLARI, COMPRESI, MA NON SOLO, DANNI PER PERDITA DI PROFITTI, AVVIAMENTO, UTILIZZO, DATI O ALTRE PERDITE INTANGIBILI (ANCHE SE SIAMO STATI INFORMATI DELLA POSSIBILITA \' DI TALI DANNI), RISULTANTI DA O DERIVANTI DA (I) L\'USO O INCAPACITA\' DI USO DEL SERVIZIO, (II) IL COSTO DI OTTENERE BENI SOSTITUTIVI E / O SERVIZI DERIVANTI DA QUALSIASI TRANSAZIONE STIPULATO IL TRAMITE IL SERVIZIO, (III) L\'ACCESSO NON AUTORIZZATO O LA MODIFICA DELLA TUA TRASMISSIONE DEI DATI, O (IV) QUALSIASI ALTRA QUESTIONE RELATIVA AL SERVIZIO (V) O L\'USO DEL APPLICAZIONE DA QUALSIASI PERSONA CON LIMITATA CAPACITA\’ GIURIDICA. Liv BetTips NON E\’ RESPONSABILE SE UN CLIENTE DIVENTA DIPESO O DIPENDENTE  A GIOCHI D\’ AZZARDO. LiveBetTips FORNISCE CONSIGLI E SUGGERIMENTI PER LE SCOMMESSE E NON E\’ RESPONSABILE PER NESSUNA PERDITA FINANZIARIA O DI ALTRO TIPO EFFETTUATE DAI NOSTRI CONSIGLI O SUGGERIMENTI IN QUALSIASI FORMA.
+Legge Applicabile
+
+L\'utente accetta che queste Condizioni d\'Uso e ogni disputa derivante dall\'uso dell\'applicazione  LiveBetTips o dai nostri prodotti o servizi saranno regolati e interpretati in conformità con le leggi locali in cui si trova la sede del titolare del LiveBetTips app, senza riguardo al conflitto di provvedimento legislativo. Registrandosi o usando l’applicazione LiveBetTips  ed i suoi servizi ci si acetta e sottopone alla giurisdizione esclusiva e località  del paese o della città in cui si trova la sede del titolare del LiveBetTips app.
+Pagamento
+Per poter accedere  alle previsioni di scommesse l’utente dovrebbe avere crediti. I crediti sono disponibili per acquisto tramite Apple in app acquisti.  Ci sono due prodotti per comprare tramite app acquisti. Il prodotto di un (1) credito o cinque (5) crediti. Ogni previsione costa un credito. Il modo di pagamento può essere modificato da LiveBetTips cosa che sarà annunciato ai clienti prima dell’acquisto dei crediti.
+Disconoscimento
+LiveBetTips non garantisce vincite e non può essere ritenuto responsabile per le perdite derivanti dalle nostre previsioni (suggerimenti) ottenuti da questa applicazione.
+Le scommesse possono essere molto rischiose e gli utenti dovrebbero  solo speculare con i soldi che possono comodamente perdere e dovrebbero assicurarsi che i rischi coinvolti siano pienamente compresi, in cerca di consigli se necessario.
+LiveBetTips non è responsabile per le perdite derivanti dall’utilizzo di previsioni (suggerimenti) ottenuti da questa applicazione e NON saranno rimborsate perdite di questo tipo.</string>
+
+
+    <string name="subject">-oggetto</string>
+    <string name="yourMessage">-il tuo messaggio</string>
+    <string name="send">-invia</string>
+    <string name="apply">-applica</string>
+    <string name="filters">-filtri</string>
+    <string name="credits">-crediti</string>
+    <string name="email">-e-mail</string>
+    <string name="password">-password</string>
+    <string name="resetPassword"><u>-ho dimenticato </u></string>
+    <string name="register">-registrati</string>
+    <string name="accept">-accetta</string>
+    <string name="agree"><u>-d’accordo</u></string>
+    <string name="terms"><u>-termini</u></string>
+
+
+</resources>

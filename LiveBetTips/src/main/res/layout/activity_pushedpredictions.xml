@@ -9,19 +9,20 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="#706D2A"
+        android:background="@drawable/background"
         android:id="@+id/header1"
         android:layout_alignParentTop="true">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Credits"
+            android:text="Units"
             android:textColor="#1ffffd"
-            android:id="@+id/tv_header_credits"
+            android:id="@+id/tv_header_units"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"/>
+            android:textSize="24sp"
+            android:gravity="center_horizontal"/>
     </LinearLayout>
 
     <View
@@ -29,7 +30,34 @@
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:background="@android:color/black"
-        android:layout_below="@+id/header1"/>
+        android:layout_below="@+id/header1"
+        android:layout_above="@+id/header2"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#706D2A"
+        android:id="@+id/header2"
+        android:layout_below="@+id/header1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/credits"
+            android:textColor="#1ffffd"
+            android:id="@+id/tv_header_credits"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/black_line2"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@android:color/black"
+        android:layout_below="@+id/header2"/>
 
     <ListView
         android:layout_width="wrap_content"
@@ -37,21 +65,21 @@
         android:id="@+id/lv_pushedprediction_prediction"
         android:layout_centerHorizontal="true"
         android:cacheColorHint="@android:color/transparent"
-        android:layout_above="@+id/header2"
-        android:layout_below="@+id/black_line1" />
+        android:layout_above="@+id/header3"
+        android:layout_below="@+id/black_line2" />
 
     <View
-        android:id="@+id/black_line2"
+        android:id="@+id/black_line3"
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:background="@android:color/black"
-        android:layout_above="@+id/header2"/>
+        android:layout_above="@+id/header3"/>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:id="@+id/header2"
+        android:id="@+id/header3"
         android:background="#706D2A"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
@@ -61,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Filters"
+            android:text="@string/filters"
             android:textColor="#1ffffd"
             android:id="@+id/tv_header_filter"
             android:layout_marginTop="8dp"

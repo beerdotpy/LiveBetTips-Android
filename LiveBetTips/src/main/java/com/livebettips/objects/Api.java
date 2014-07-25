@@ -17,6 +17,7 @@ public class Api {
     public static UserInterface userInterface;
     public static PredictionInterface predictionInterface;
     public static Context applicationContext;
+    public static SlidingMenu slidingMenu;
 
     static{
 
@@ -33,7 +34,7 @@ public class Api {
 
     public static SlidingMenu initSlidingMenu(Context ctx){
 
-        SlidingMenu slidingMenu = new SlidingMenu(ctx);
+        slidingMenu = new SlidingMenu(ctx);
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         slidingMenu.setShadowWidthRes(R.dimen.slidingmenu_shadow_width);

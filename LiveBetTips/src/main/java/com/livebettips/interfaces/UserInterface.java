@@ -29,5 +29,8 @@ public interface UserInterface {
     @POST("/user/credit/buy/")
     void userbuyCredit(@Body HashMap hasMAp,Callback<HashMap> callback);
 
+    @POST("/user/prediction/buy/")
+    void buyPrediction(@Body HashMap hasMAp,Callback<HashMap> callback);
+
 
 }

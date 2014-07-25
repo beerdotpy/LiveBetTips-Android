@@ -9,5 +9,7 @@
     <dimen name="width_et">250dp</dimen>
     <dimen name="slidingmenu_shadow_width">5dp</dimen>
     <dimen name="slidingmenu_offset">100dp</dimen>
+    <dimen name="dist_spinner">60dp</dimen>
+
 
     </resources>

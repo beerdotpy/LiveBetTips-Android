@@ -128,16 +128,16 @@ public class SlidingMenuFragment extends Fragment {
         List<Section> sectionList = new ArrayList<Section>();
 
 
-        sectionList.add(new Section(1,"My Tips"));
-        sectionList.add(new Section(2,"Contact Us"));
-        sectionList.add(new Section(3,"Info"));
+        sectionList.add(new Section(1,getString(R.string.title_activity_purchased_predictions)));
+        sectionList.add(new Section(2,getString(R.string.title_activity_contact_us)));
+        sectionList.add(new Section(3,getString(R.string.title_activity_info)));
         if(isLoggedIn) {
             sectionList.add(new Section(4, "Logout"));
         }else{
-            sectionList.add(new Section(4, "Login"));
+            sectionList.add(new Section(4, getString(R.string.title_activity_login)));
         }
-        sectionList.add(new Section(5,"Register"));
-        sectionList.add(new Section(6,"Buy Tips"));
+        sectionList.add(new Section(5,getString(R.string.title_activity_register)));
+        sectionList.add(new Section(6,getString(R.string.title_activity_in_app_billing)));
         return sectionList;
     }
 

@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Login"
+        android:text="@string/title_activity_login"
         android:id="@+id/tv_login_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/margin_top_tv"
@@ -29,7 +29,7 @@
         android:paddingTop="10dp"
         android:paddingLeft="5dp"
         android:inputType="textEmailAddress"
-        android:hint="Email ID"/>
+        android:hint="@string/email"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
         android:layout_below="@+id/et_login_email"
         android:layout_marginTop="@dimen/dist_et_et"
         android:layout_centerHorizontal="true"
-        android:hint="Password"
+        android:hint="@string/password"
         android:width="@dimen/width_et" />
 
     <TextView
@@ -70,7 +70,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:text="@string/title_activity_login"
         android:id="@+id/bt_login_login"
         android:layout_below="@+id/et_login_password"
         android:layout_centerHorizontal="true"

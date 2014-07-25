@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_activity_register">-registrate</string>
+    <string name="title_activity_login">-ingreso</string>
+    <string name="title_activity_purchased_predictions">-compra consejos</string>
+    <string name="title_activity_contact_us">-pòngase en contacto con nosotros </string>
+    <string name="title_activity_in_app_billing">-compra consejos</string>
+    <string name="title_activity_info">-infomaciòn</string>
+    
+    <string name="info">Apuesta en directo es una categoría de apuestas, lo que produce grandes beneficios, así como la oportunidad de "cubrir" tus apuestas.
+El empleo de esta categoría de apuestas requiere dedicación de mucho tiempo para el estudio de juegos antes de iniciar y también para su observación.
+Para el estudio de los juegos se necesitan la estrategia, la disciplina, el tiempo y el conocimiento de las apuestas y estadísticas.
+Nuestro equipo mira los partidos elegidos live y propone el resultado final del partido.
+Aprovechamos las grandes variaciones en el rendimiento durante un partido de fútbol para nuestro provecho.
+Todos nuestros clientes riceverrano nuestras predicciones en sus teléfonos móviles en vivo.
+Lo único que tienes que hacer es apostar.
+Más importante es la siguiente estrategia que seguimos y recomendamos:
+-Apostar siempre la misma cantidad de dinero (Flat Bet).
+Elegimos esta forma de apuestas, ya que es seguro que habrá una serie de buenos resultados, así como ineficaz. Queremos proteger nuestro capital y, al mismo tiempo, aumentar nuestras ganancias.
+-Siempre jugamos juegos de probabilidad por la misma razón que se mencionó anteriormente.
+-Cuando se confirma nuestra apuesta, cubrimos casi siempre porque de esta manera ganamos  un 4-7% de más.
+-Todas la apuestas elegidas  se juegan entre el 45° y el 70° minuto del partido, que es su culminación.
+------ ¿Qué es una predicción?
+Esta es nuestra filosofía sobre lo que constituye una "predicción".
+Para nosotros, la apuesta en los partidos de fútbol es una cuestión de estadística. Utilizamos nuestra amplia experiencia impulsada principalmente por las estadísticas.
+------ ¿Qué es cubrir una apuesta?
+Durante un juego elegimos un resultado segùn nuestras predicciones. Si nuestras predicciones no se confirman en cualquier punto en el juego, entonces se pierden las apuestas. -Por el contrario, si nuestras predicciones se confirman antes del final del juego, tenemos la posibilidad de no perder el capital invertido. La manera de lograr esto es apostar a los otros dos resultados del partido con una suma de dinero para que no perdamos si, al final del juego, nuestra primera predicción no está confirmada.
+Ejemplo:
+Cubrimos en una victoria en casa.
+Digamos que estamos jugando una victoria en casa que se inicia el juego con una probabilidad de 1,80, y apostamos a 100 unidades. Al cabo del 60° minuto (cuando normalmente tomamos nuestras previsiones), tenemos un empate. El precio en este punto del juego (sin tarjeta roja) es de aproximadamente 2,50 a 2,70. Si se marca un gol el equipo local en ese momento o posteriormente, el precio baja a 1.10 a 1.30. Este es el tiempo para cubrir la apuesta, poniendo la victoria en casa (si jugamos intercambios de apuestas), o apostar por un empate y gana el equipo visitante (jugamos en bookmakers convencionales). En las dos situaciones anteriores cubrimos nuestras apuestas para proteger nuestra inversión de 100 unidades. Pero, ¿por qué lo hacemos? La respuesta a esta pregunta se basa en las estadísticas. Análisis de 2.500 + partidos demostró que los últimos 10 +2 ο 3 minutos  tiempo extra (después de los 80 minutos del partido), aproximadamente el 30% de los partidos van desde la victoria local, a empate o victoria del equipo visitante. Sin cubrir nuestras apuestas tendríamos una ganancia de 820 unidades cada 10 partidos [2, 60 x 70% = 1820 – 1000(10x100) = 820). Cubriendo [2, 40(2, 60-0, 20) x70% = 1680 – 1000 = 680 +300 (los 3 partidos que NO HEMOS PERDIDO)=980.  ESTA ES UNA DIFERENCIA DE 16% DE GANANCIA, SOLO CUBRIENDO NUESTROS PARTIDOS. Si el gol es marcado en los últimos minutos de un juego, podemos cubrir nuestras apuestas con la misma cantidad de dinero, y tener una ganancia, sea cual sea el resultado del juego. Esto hace nuestro beneficio aún mayor.
+Podemos hacer coberturas similares en OVER, UNDER,VICTORIA LOCAL O EMPATE, VICTORIA EQUIPO VISITANTE O EMPATE, VICTORIA EQUIPO VISITANTE, EMPATE ecc. Esta es la ventaja del Live Bet: Esta es la ventaja de la apuesta en vivo: usted tiene el tiempo para evitar los juegos que no van de la manera deseada, evitar las apuestas en partidos con lesiones de juego, tarjetas rojas, etc y cuando se apuesta en los partidos, usted tiene el lujo de cubrir su inversión (no perder su capital), y si en los últimos momentos del juego, para obtener un beneficio en cada resultado del juego.</string>
+
+
+    <string name="termsText">Es vuestra responsabilidad asegurarse de que el dispositivo móvil cumple con todas las especificaciones técnicas necesarias para permitir el acceso y el uso de LiveBetTips aplicación. Aplicaciones de Apple están autorizados para su uso en un dispositivo propiedado o controlado por usted y usando Apple iPhone OS así que usted debe asegurarse de que utiliza un dispositivo apropiado para acceder y utilizar cualquier aplicación de Apple.
+    Términos.
+    Al acceder LiveBetTips, usted acepta que quedará vinculado por estos Términos y Condiciones de Uso, todas las leyes y regulaciones aplicables, y acepta estar responsable del cumplimiento de las leyes locales aplicables. Si usted no está de acuerdo con cualquiera de estos términos, está prohibido el uso o acceso de esta aplicación. Los materiales contenidos en LiveBetTips aplicación están protegidos por derechos de autor y derecho de marcas.
+    INSCRIPCIÓN
+    El cliente debe ser mayor de 18 años o más para estar registrado y contratado los servicios de LiveBetTips. Durante el proceso de registro se le pedirá que acepte que tiene 18 años de edad o más. Si usted nota cualquier uso no autorizado de su cuenta o cualquier otra violación de seguridad, debe notificar LiveBetTips. LiveBetTips no es responsable de los daños o pérdidas que surgen de la falta de cumplimiento de esta cláusula.
+    Seguridad de los Clientes
+
+    Durante la inscripción con LiveBetTips, se selecciona un nombre de usuario (su dirección de correo electrónico) y la password para activar el servicio y su cuenta. Usted es el único responsable de mantener su nombre de usuario y una contraseña confidencial y tomar toda la responsabilidad por todas las actividades bajo su nombre de usuario y contraseña. Es vuestra responsabilidad comunicarse con LiveBetTips inmediatamente en caso de cualquier uso no autorizado de sus datos de acceso personal.
+    Nuestro servicio
+    LiveBetTips ofrece consejos y predicciones en vivo (sugerencias) para las apuestas o juegos de azar.
+    LIMITACIÓN DE LA RESPONSABILIDAD
+    EL USUARIO ENTIENDE Y ACEPTA QUE NO SEREMOS RESPONSABLES POR NINGÚN DAÑO DIRECTO, INDIRECTO, ESPECIAL, INCIDENTAL, CONSECUENTE O EJEMPLAR, INCLUYENDO PERO NO LIMITADO A, DAÑOS POR PÉRDIDA DE BENEFICIOS, VOLUNTAD, USO, DATOS U OTRAS PÉRDIDAS INTANGIBLES (INCLUSO SI SON SIDO ADVERTIDO DE LA POSIBILIDAD DE TALES DAÑOS), COMO RESULTADO DE O DERIVADOS DE (I) EL USO O IMPOSIBILIDAD DE \'EL USO DEL SERVICIO, (II) EL COSTE PARA OBTENER PRODUCTOS DE SUSTITUCIÓN Y / O SERVICIOS RESULTANTES DE CUALQUIER TRANSACCIÓN REALIZADA EN MEDIO DEL SERVICIO, (III) EL ACCESO NO AUTORIZADO O LA ALTERACIÓN DE LAS TRANSMISIONES DE DATOS, O (IV) CUALQUIER OTRO ASUNTO RELACIONADO CON EL SERVICIO (V) O USO DE LA APLICACIÓN POR CUALQUIER PERSONA CON CAPACIDAD LIMITADA LEGAL. LiveBetTips NO ES RESPONSABLE SI UN CLIENTE SE CONVIERTE DIPENDIDO O EMPLEADO DE JUEGOS DE AZAR. LiveBetTips  OFRECE CONSEJOS Y SUGERENCIAS PARA APUESTAS Y NO ES RESPONSABLE POR CUALQUIER PÉRDIDA FINANCIERA O DE OTRO HECHO POR NUESTRO CONSEJO O SUGERENCIAS EN CUALQUIER FORMA.
+    Legislación Aplicable
+    El usuario acepta que estas Condiciones de Uso y cualquier controversia derivada de la LiveBetTips aplicación o nuestros productos o servicios se regirán e interpretarán de acuerdo con las leyes locales en la sede del propietario de la aplicación LiveBetTips, sin relación a los conflictos de legislación. Al registrarse o utilizar las aplicaciones y LiveBetTips y sus servicios acepta somete a la jurisdicción exclusiva y lugares alrededor del país o la ciudad donde se encuentra la sede del propietario de la aplicación LiveBetTips.
+    EL PAGO
+    Para acceder a las predicciones de apuestas el usuario debe tener crèditos. Los créditos están disponibles para comprar a través de Apple in app compras. Hay dos productos para comprar a través de Compras In App. El producto de un (1) crèdito o cinco (5) créditos. Cada previsión cuesta un crédito. La forma de pago puede ser cambiado por LiveBetTips , cosa que será anunciada a los clientes antes de comprar créditos.
+    Renuncia
+    LiveBetTips no garantiza ganancias y no se hace responsable de las pérdidas que surgen de nuestras predicciones (consejos) obtenidos de esta aplicación.
+    Las apuestas pueden ser un gran riesgo y los usuarios sólo deben especular con dinero que pueden perder cómodamente y deben asegurarse de que los riesgos implicados se entienden completamente, buscando asesoramiento en caso necesario.
+    LiveBetTips no es responsable de las pérdidas derivadas de la utilización de las predicciones (consejos) obtenidos de esta aplicación y no se reembolsarán las pérdidas de este tipo.</string>
+
+
+    <string name="subject">-objeto</string>
+    <string name="yourMessage">-tu mensaje</string>
+    <string name="send">-envia  </string>
+    <string name="apply">-aplica</string>
+    <string name="filters">-filtros</string>
+    <string name="credits">-crèditos</string>
+    <string name="email">-e-mail</string>
+    <string name="password">-password</string>
+    <string name="resetPassword"><u>-he olvidado </u></string>
+    <string name="register">-registrate</string>
+    <string name="accept">-acepta</string>
+    <string name="agree"><u>-de acuerdo</u></string>
+    <string name="terms"><u>-tèrminos</u></string>
+
+
+</resources>
