@@ -41,7 +41,7 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
     PredictionAdapter predictionAdapter;
     List<Prediction> prediction1;
     Context ctx;
-    Boolean isLoggedIn;
+    Boolean isLoggedIn,fetchPrediction;
     int userID,credit;
     SharedPreferences prefs;
     ProgressDialog progressDialog;
@@ -64,36 +64,30 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
 
         Api.initSlidingMenu(ctx).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
 
-        progressDialog = new ProgressDialog(ctx);
-        progressDialog.setTitle("Please Wait");
-        progressDialog.setMessage("Fetching Predictions ...");
-        progressDialog.setIndeterminate(true);
-        progressDialog.show();
+        prefs = ctx.getSharedPreferences("bettips", MODE_PRIVATE);
 
-        prefs = ctx.getSharedPreferences("bettips",MODE_PRIVATE);
-
-        userID = prefs.getInt("userID",0);
-        isLoggedIn = prefs.getBoolean("isLoggedIn",false);
-        credit = prefs.getInt("credit",0);
+        userID = prefs.getInt("userID", 0);
+        isLoggedIn = prefs.getBoolean("isLoggedIn", false);
+        credit = prefs.getInt("credit", 0);
 
 
-        tv_credit.setText(Integer.toString(credit)+" Credits");
+        tv_credit.setText(Integer.toString(credit) + " Credits");
 
         lv_prediction = (ListView) findViewById(R.id.lv_pushedprediction_prediction);
 
         lv_prediction.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(isLoggedIn) {
+                if (isLoggedIn) {
                     Intent showPrediction = new Intent(PushedPredictions.this, ShowPredictionDetail.class);
                     showPrediction.putExtra("predictionID", prediction1.get(position).getID());
-                    showPrediction.putExtra("leagueType",prediction1.get(position).getLeagueType());
-                    showPrediction.putExtra("homeTeam",prediction1.get(position).getHomeTeam());
-                    showPrediction.putExtra("awayTeam",prediction1.get(position).getAwayTeam());
+                    showPrediction.putExtra("leagueType", prediction1.get(position).getLeagueType());
+                    showPrediction.putExtra("homeTeam", prediction1.get(position).getHomeTeam());
+                    showPrediction.putExtra("awayTeam", prediction1.get(position).getAwayTeam());
                     showPrediction.putExtra("userID", userID);
                     startActivity(showPrediction);
-                }else{
-                    Toast.makeText(ctx,"Login is required to view the tip",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(ctx, "Login is required to view the tip", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -104,52 +98,58 @@ public class PushedPredictions extends ActionBarActivity implements FilterFragme
             public void onClick(View v) {
 
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                DialogFragment newFragment = new FilterFragment(league,predictionName);
-                newFragment.show(ft,"sda");
+                DialogFragment newFragment = new FilterFragment(league, predictionName);
+                newFragment.show(ft, "sda");
 
 
             }
         });
 
-        Api.predictionInterface.getPushedPredictions(new Callback<List<Prediction>>() {
+            progressDialog = new ProgressDialog(ctx);
+            progressDialog.setTitle("Please Wait");
+            progressDialog.setMessage("Fetching Predictions ...");
+            progressDialog.setIndeterminate(true);
+            progressDialog.show();
 
-            @Override
-            public void success(List<Prediction> predictions, Response response) {
+            Api.predictionInterface.getPushedPredictions(new Callback<List<Prediction>>() {
 
-                Api.predictionInterface.getFilter(new Callback<Filter>() {
-                    @Override
-                    public void success(Filter filter, Response response) {
+                @Override
+                public void success(List<Prediction> predictions, Response response) {
 
-                        league = filter.getLeague();
-                        league.add(0,"ALL");
-                        predictionName = filter.getPredictionName();
-                        predictionName.add(0,"ALL");
-                        tv_units.setText(filter.getUnits());
-                    }
-                    @Override
-                    public void failure(RetrofitError error) {
+                    Api.predictionInterface.getFilter(new Callback<Filter>() {
+                        @Override
+                        public void success(Filter filter, Response response) {
 
-                        Toast.makeText(ctx,"Some error occured.Please try again",Toast.LENGTH_LONG).show();
+                            league = filter.getLeague();
+                            league.add(0, "ALL");
+                            predictionName = filter.getPredictionName();
+                            predictionName.add(0, "ALL");
+                            tv_units.setText(filter.getUnits());
+                        }
 
-                    }
-                });
+                        @Override
+                        public void failure(RetrofitError error) {
 
-                Collections.reverse(predictions);
-                prediction1 = predictions;
-                predictionAdapter = new PredictionAdapter(ctx,predictions);
-                lv_prediction.setAdapter(predictionAdapter);
-                progressDialog.dismiss();
+                            Toast.makeText(ctx, "Some error occured.Please try again", Toast.LENGTH_LONG).show();
 
-            }
+                        }
+                    });
 
-            @Override
-            public void failure(RetrofitError error) {
+                    Collections.reverse(predictions);
+                    prediction1 = predictions;
+                    predictionAdapter = new PredictionAdapter(ctx, predictions);
+                    lv_prediction.setAdapter(predictionAdapter);
+                    progressDialog.dismiss();
 
-                Toast.makeText(ctx,"Please try again",Toast.LENGTH_SHORT).show();
-                progressDialog.dismiss();
-            }
-        });
+                }
 
+                @Override
+                public void failure(RetrofitError error) {
+
+                    Toast.makeText(ctx, "Please try again", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }
+            });
 
     }
 

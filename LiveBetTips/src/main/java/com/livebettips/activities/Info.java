@@ -23,6 +23,8 @@ public class Info extends ActionBarActivity {
 
 
         Api.initSlidingMenu(this).attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+
+
     }
 
     @Override

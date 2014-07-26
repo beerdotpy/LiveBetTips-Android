@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+    android:fillViewport="true">
+
+<RelativeLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:orientation="vertical"
@@ -52,7 +57,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text=""
             android:id="@+id/tv_prediction_message"
-            android:layout_marginTop="@dimen/default_gap"
+            android:layout_marginTop="12dp"
             android:layout_marginLeft="@dimen/default_gap"
             android:textColor="#ffffff"/>
 
@@ -83,3 +88,4 @@
 
 
 </RelativeLayout>
+    </ScrollView>

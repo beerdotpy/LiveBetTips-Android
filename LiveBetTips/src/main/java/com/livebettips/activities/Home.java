@@ -66,7 +66,7 @@ public class Home extends Activity {
                 mCountDown.start();
             }
 
-       }
+        }
     }
 
     private boolean checkPlayServices() {

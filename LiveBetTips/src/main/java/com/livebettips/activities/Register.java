@@ -171,10 +171,15 @@ public class Register extends ActionBarActivity {
                         @Override
                         public void failure(RetrofitError retrofitError) {
                             progressDialog.dismiss();
-                            if (retrofitError.getResponse().getStatus() == 409) {
-                                tv_validEmail.setTextColor(Color.RED);
-                                tv_validEmail.setText("Email ID already exists");
-                            }
+                           try{
+                               if (retrofitError.getResponse().getStatus() == 409) {
+                                   tv_validEmail.setTextColor(Color.RED);
+                                   tv_validEmail.setText("Email ID already exists");
+                               }
+                           }catch (NullPointerException e){
+                                    e.printStackTrace();
+                               Toast.makeText(ctx,"Sorry error occured while registering.Please try again!",Toast.LENGTH_LONG).show();
+                           }
 
                             Log.d("error", retrofitError.toString());
                             // Catch error here

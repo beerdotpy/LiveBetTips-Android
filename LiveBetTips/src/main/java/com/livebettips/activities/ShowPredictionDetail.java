@@ -176,9 +176,8 @@ public class ShowPredictionDetail extends ActionBarActivity {
     @Override
     public void onBackPressed() {
         Log.d("CDA", "onBackPressed Called");
-        Intent back = new Intent(this,PushedPredictions.class);
         finish();
-        startActivity(back);
+
     }
 
 }
